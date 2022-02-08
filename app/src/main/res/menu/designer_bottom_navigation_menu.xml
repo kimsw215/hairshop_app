@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/designer_page_home"
+        android:enabled="true"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/designer_page_chatting"
+        android:enabled="true"
+        android:title="대화방"/>
+
+    <item
+        android:id="@+id/designer_page_setting"
+        android:enabled="true"
+        android:title="설정"/>
+
+    <!-- android:icon="@drawable/~"-->
+</menu>

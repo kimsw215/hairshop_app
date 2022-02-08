@@ -14,6 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hair_you">
         <activity
+            android:name=".DesignerMainActivity"
+            android:exported="true"/>
+        <activity android:name=".ReservationManagementActivity"
+            android:exported="true"/>
+        <activity
             android:name=".JoinLoginActivity"
             android:exported="true" />
         <activity
