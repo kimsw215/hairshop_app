@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <ImageView
+    android:id="@+id/main_logo"
+    android:layout_width="400dp"
+    android:layout_height="100dp"
+    android:src="@drawable/splash2"
+    android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:layout_marginTop="300dp"
+        android:layout_gravity="center"
+        android:id="@+id/user_id"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+
+        android:hint="ID"/>
+
+    <EditText
+
+        android:layout_gravity="center"
+        android:id="@+id/user_pw"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:inputType="textPassword"
+        android:hint="PW"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:text="이메일 로그인"
+            android:textSize="13dp"
+            android:background="@drawable/button_background"/>
+
+        <ImageButton
+            android:id="@+id/kakaologin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="20dp"
+            android:src="@drawable/kakao_login_medium_wide"/>
+        
+        <EditText
+            android:id="@+id/logintojoin"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:paddingTop="20dp"
+            android:gravity="center"
+            android:text="Don't have an account? Sign up"/>
+
+    </LinearLayout>
+    
+
+
+</LinearLayout>
