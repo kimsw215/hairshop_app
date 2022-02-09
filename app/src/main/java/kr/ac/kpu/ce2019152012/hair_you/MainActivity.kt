@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val keyHash = Utility.getKeyHash(this)
-        //Log.e("해시키", keyHash)
+        Log.e("해시키", keyHash)
     }
 }
