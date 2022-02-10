@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -43,7 +44,14 @@ dependencies {
     implementation "com.kakao.sdk:v2-talk:2.8.5" // 친구, 메시지(카카오톡)
     implementation "com.kakao.sdk:v2-story:2.8.5" // 카카오스토리
     implementation "com.kakao.sdk:v2-link:2.8.5" // 메시지(카카오링크)
-    implementation "com.kakao.sdk:v2-navi:2.8.5" // 카카오내비
+    implementation "com.kakao.sdk:v2-navi:2.8.5"// 카카오내비
+
+    // 파이어 베이스 커스텀 로그인, 데이터 베이스
+    implementation 'com.google.firebase:firebase-analytics-ktx:20.0.2'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.3'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.0.1'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
