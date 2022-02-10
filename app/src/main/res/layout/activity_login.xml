@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+
     <ImageView
     android:id="@+id/main_logo"
     android:layout_width="400dp"
