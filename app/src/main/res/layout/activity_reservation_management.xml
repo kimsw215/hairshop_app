@@ -8,6 +8,7 @@
     android:background="@color/white"
     tools:context=".ReservationManagementActivity">
 
+    <!-- 예약자 관리 헤더 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -43,10 +44,21 @@
             android:layout_gravity="right"/>
     </LinearLayout>
 
-    <fragment
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        ></fragment>
+        android:orientation="horizontal"
+        android:background="@color/browser_actions_bg_grey">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginLeft="20dp"
+            android:padding="15dp"
+            android:src="@drawable/icon_profile"
+            app:civ_border_width="2dp" />
+    </LinearLayout>
+
 
 </LinearLayout>

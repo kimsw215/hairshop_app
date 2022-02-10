@@ -31,6 +31,16 @@
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"/>
 
+        <Button
+            android:id="@+id/designer_page_setting_btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그아웃"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            />
+
         <!-- <ImageView
             android:id="@+id/header_home"
             android:layout_width="50dp"
