@@ -1,17 +1,14 @@
-package kr.ac.kpu.ce2019152012.hair_you
+package kr.ac.kpu.ce2019152012.hair_you.designer
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import kr.ac.kpu.ce2019152012.hair_you.fragment.DesignerChattingFragment
+import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerChattingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kr.ac.kpu.ce2019152012.hair_you.fragment.DesignerHomeFragment
-import kr.ac.kpu.ce2019152012.hair_you.fragment.DesignerSettingFragment
+import kr.ac.kpu.ce2019152012.hair_you.R
+import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerHomeFragment
+import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerSettingFragment
 
 
 class DesignerMainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {

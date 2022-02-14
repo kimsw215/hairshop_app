@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".ReservationManagementActivity">
+    tools:context=".designer.ReservationManagementActivity">
 
     <!-- 예약자 관리 헤더 -->
     <LinearLayout
