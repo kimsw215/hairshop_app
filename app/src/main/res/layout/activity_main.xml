@@ -7,6 +7,21 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/gotoDesignerPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="디자이너 페이지 가는 버튼"
+        />
+
+    <Button
+        android:id="@+id/gotoUserPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="유저 페이지 가는 버튼"
+        />
+
+
 
 
 
