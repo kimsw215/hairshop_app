@@ -2,17 +2,17 @@
 
     <item
         android:id="@+id/designer_page_home"
-        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
         android:title="홈"/>
 
     <item
         android:id="@+id/designer_page_chatting"
-        android:enabled="true"
+        android:icon="@drawable/ic_baseline_message_24"
         android:title="대화방"/>
 
     <item
         android:id="@+id/designer_page_setting"
-        android:enabled="true"
+        android:icon="@drawable/ic_baseline_settings_24"
         android:title="설정"/>
 
     <!-- android:icon="@drawable/~"-->

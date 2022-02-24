@@ -1,27 +1,30 @@
-package kr.ac.kpu.ce2019152012.hair_you
+package kr.ac.kpu.ce2019152012.hair_you.designer
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import kr.ac.kpu.ce2019152012.hair_you.fragment.DesignerChattingFragment
+import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerChattingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kr.ac.kpu.ce2019152012.hair_you.fragment.DesignerHomeFragment
-import kr.ac.kpu.ce2019152012.hair_you.fragment.DesignerSettingFragment
+import kr.ac.kpu.ce2019152012.hair_you.R
+import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityDesignerMainBinding
+import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerHomeFragment
+import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerSettingFragment
 
 
 class DesignerMainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     lateinit var bottomNavigationView : BottomNavigationView
     lateinit var selectedFragment : Fragment
 
+    private lateinit var binding: ActivityDesignerMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_designer_main)
+        binding = ActivityDesignerMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
@@ -30,8 +33,7 @@ class DesignerMainActivity : AppCompatActivity(), BottomNavigationView.OnNavigat
         supportFragmentManager.beginTransaction().add(R.id.linearLayout, DesignerHomeFragment()).commit()
 
 
-        //val keyHash = Utility.getKeyHash(this)
-        //Log.e("해시키", keyHash)
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

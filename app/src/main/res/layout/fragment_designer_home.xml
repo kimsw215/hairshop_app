@@ -3,39 +3,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.DesignerHomeFragment">
+    tools:context=".designer.fragment.DesignerHomeFragment">
 
 
     <LinearLayout
+        android:id="@+id/designer_page_home_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="{미용실 이름}"
-            android:textSize="40dp"
-            />
+        <!-- 페이지 헤더 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="{미용실 이름}"
+                android:textSize="30dp" />
 
-        <TextView
-            android:id="@+id/designer_tv_reservation_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:text="- 예약 현황 보기"
-            android:textSize="16dp" />
+            <ImageView
+                android:id="@+id/designer_home_iv_bell"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_bell_not_activated" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/designer_tv_reservation_management"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="250dp"
-            android:text="- 예약자 관리"
-            android:textSize="16dp" />
-
-
+        <!-- 예약 내역 제목 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:background="@color/browser_actions_bg_grey"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="방문일자"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_weight="2"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="예약자"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="휴대폰"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="예약내역"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_weight="6"
+                />
+        </LinearLayout>
     </LinearLayout>
+
+
+    <!-- 예약 내역 출력 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/designer_page_home_reservation_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!-- 예약 DB 연동 후 내역 출력 => 리스트로?
+            방문일자, 예약자, 핸드폰번호, 예약내역 -->
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </FrameLayout>
