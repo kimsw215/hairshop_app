@@ -12,9 +12,11 @@ class DesignerChattingFragment : Fragment() {
 
     private lateinit var binding: FragmentDesignerChattingBinding
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDesignerChattingBinding.bind(view)
+
 
     }
 

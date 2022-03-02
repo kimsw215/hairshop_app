@@ -44,10 +44,11 @@
             android:layout_gravity="right"/>
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+
         android:background="@color/browser_actions_bg_grey">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -58,6 +59,66 @@
             android:padding="15dp"
             android:src="@drawable/icon_profile"
             app:civ_border_width="2dp" />
+
+        <!--이름-->
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/profile_image"
+            android:text="OOO"
+            android:textSize="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="님"
+            android:textSize="30dp"
+            android:layout_toEndOf="@+id/profile_name"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            />
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_confirm_reservation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="예약확정"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/btn_cancel_reservation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="예약취소"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/btn_chatting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="1:1 대화방"
+            android:textSize="14dp" />
+
+
     </LinearLayout>
 
 
