@@ -1,7 +1,10 @@
 {
   "project_info": {
     "project_number": "512221488956",
+<<<<<<< HEAD
+=======
     "firebase_url": "https://hair-you-default-rtdb.firebaseio.com",
+>>>>>>> origin1/master
     "project_id": "hair-you",
     "storage_bucket": "hair-you.appspot.com"
   },

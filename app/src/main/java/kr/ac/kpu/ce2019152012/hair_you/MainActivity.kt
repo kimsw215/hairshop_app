@@ -11,7 +11,7 @@ import kr.ac.kpu.ce2019152012.hair_you.user.UserMainActivity
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

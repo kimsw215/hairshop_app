@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".JoinSelectActivity">
+
+    <TextView
+        android:id="@+id/choice_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사용자 유형을 선택해주세요"
+        android:textColor="#313333"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/join_designer_btn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:src="@drawable/designer"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="디자이너"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textColor="#4b4b4b"
+        android:textSize="30dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/join_user_btn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/designer"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="고객"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textColor="#4B4B4B"
+        android:textSize="30dp"/>
+
+</LinearLayout>
