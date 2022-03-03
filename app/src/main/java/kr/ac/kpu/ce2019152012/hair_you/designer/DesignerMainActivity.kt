@@ -13,10 +13,9 @@ import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerSettingFragment
 
 
 class DesignerMainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
-    lateinit var bottomNavigationView : BottomNavigationView
     lateinit var selectedFragment : Fragment
 
-    private lateinit var binding: ActivityDesignerMainBinding
+    private lateinit var binding : ActivityDesignerMainBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,11 +24,17 @@ class DesignerMainActivity : AppCompatActivity(), BottomNavigationView.OnNavigat
         setContentView(binding.root)
 
 
+        /*
+        var fragmentone : Fragmentone = Fragmentone()
+        //프래그먼트에 data를 넣어주는 방법
+        // 번들을 이용하여 넣어줘야함
+        val bundle : Bundle = Bundle()
+        bundle.putString("hello","hello")
+        fragmentone.arguments = bundle
+        */
 
-        bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
-
-        bottomNavigationView.setOnItemSelectedListener(this)
+        binding.bottomNavigationView.setOnItemSelectedListener(this)
         supportFragmentManager.beginTransaction().add(R.id.linearLayout, DesignerHomeFragment()).commit()
 
 
@@ -40,17 +45,14 @@ class DesignerMainActivity : AppCompatActivity(), BottomNavigationView.OnNavigat
 
         when(item.itemId) {
             R.id.designer_page_home -> {
-                //supportFragmentManager.beginTransaction().replace(R.id.linearLayout , DesignerHomeFragment()).commitAllowingStateLoss()
                 selectedFragment = DesignerHomeFragment()
                 show(selectedFragment)
             }
             R.id.designer_page_chatting -> {
-                //supportFragmentManager.beginTransaction().replace(R.id.linearLayout, DesignerChattingFragment()).commitAllowingStateLoss()
                 selectedFragment = DesignerChattingFragment()
                 show(selectedFragment)
             }
             R.id.designer_page_setting -> {
-                //supportFragmentManager.beginTransaction().replace(R.id.linearLayout, DesignerSettingFragment()).commitAllowingStateLoss()
                 selectedFragment = DesignerSettingFragment()
                 show(selectedFragment)
             }
