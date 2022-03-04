@@ -36,7 +36,7 @@ class DesignerHomeFragment : Fragment() {
 
         //spring test
         retrofit=Retrofit.Builder()
-            .baseUrl("https://jsonplaceholder.typicode.com/")
+            .baseUrl("https://172.30.1.3:8080/")    // 우리 집에서 서버 열 때 url 아마도..?
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
