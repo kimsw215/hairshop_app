@@ -7,17 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kr.ac.kpu.ce2019152012.hair_you.R
-import kr.ac.kpu.ce2019152012.hair_you.adapter.MyReservationRecyclerAdapter
+import kr.ac.kpu.ce2019152012.hair_you.adapter.MyRecyclerAdapter
 import kr.ac.kpu.ce2019152012.hair_you.databinding.FragmentDesignerHomeBinding
 import kr.ac.kpu.ce2019152012.hair_you.item.tmpItem
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class DesignerHomeFragment : Fragment() {
 
     private lateinit var binding: FragmentDesignerHomeBinding
-    private lateinit var myReservationAdapter: MyReservationRecyclerAdapter
+    private lateinit var myReservationAdapter: MyRecyclerAdapter
     private lateinit var myReservationRecyclerView: RecyclerView
     private lateinit var tmpItems : ArrayList<tmpItem>
 
@@ -53,7 +51,8 @@ class DesignerHomeFragment : Fragment() {
         binding = FragmentDesignerHomeBinding.inflate(inflater, container, false)
 
         myReservationRecyclerView=binding.curReserRcv
-        myReservationAdapter=MyReservationRecyclerAdapter()
+        myReservationAdapter=
+            MyRecyclerAdapter()
 
 
         myReservationRecyclerView.adapter=myReservationAdapter

@@ -15,14 +15,15 @@ import java.util.ArrayList;
 import kr.ac.kpu.ce2019152012.hair_you.R;
 import kr.ac.kpu.ce2019152012.hair_you.item.tmpItem;
 
-public class MyReservationRecyclerAdapter extends RecyclerView.Adapter<MyReservationRecyclerAdapter.ViewHolder> {
+public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
 
     private ArrayList<tmpItem> mList;
 
     @NonNull
     @Override
-    public MyReservationRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_current_reservation_item, parent, false);
+
         return new ViewHolder(view);
     }
 
@@ -33,9 +34,6 @@ public class MyReservationRecyclerAdapter extends RecyclerView.Adapter<MyReserva
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.reser_content.setText("sdf");
-        holder.reser_date.setText("3/1");
-
         holder.onBind(mList.get(position));
 
     }
@@ -44,13 +42,13 @@ public class MyReservationRecyclerAdapter extends RecyclerView.Adapter<MyReserva
         this.mList = tmpItems;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView reser_date;
         TextView reser_name;
         TextView reser_phone;
         TextView reser_content;
 
-        public ViewHolder(View itemView) {
+        private ViewHolder(View itemView) {
             super(itemView);
 
             reser_date = (TextView) itemView.findViewById(R.id.reser_date_tv);
