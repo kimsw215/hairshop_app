@@ -1,44 +1,42 @@
 package kr.ac.kpu.ce2019152012.hair_you.dto;
 
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
+
+@SafeParcelable.Constructor
 public class UserDto {
-    private String userName;
-    private String userEmail;
-    private String userPasswd;
+    private String identification;
+    private String name;
+    private String id;
+    private String passwd;
+    private String gender;
+    private String registeredAt;
 
-    public UserDto() {
-
+    public UserDto(String identification, String name, String id, String passwd, String gender, String registeredAt) {
+        this.identification = identification;
+        this.name = name;
+        this.id = id;
+        this.passwd = passwd;
+        this.gender = gender;
+        this.registeredAt = registeredAt;
     }
 
     @Override
     public String toString() {
         return "UserDto{" +
-                "userName='" + userName + '\'' +
-                ", userEmail='" + userEmail + '\'' +
-                ", userPasswd='" + userPasswd + '\'' +
+                "identification='" + identification + '\'' +
+                ", name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", passwd='" + passwd + '\'' +
+                ", gender='" + gender + '\'' +
+                ", registeredAt='" + registeredAt + '\'' +
                 '}';
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public String getGender() {
+        return gender;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public void setUserPasswd(String userPasswd) {
-        this.userPasswd = userPasswd;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public String getUserPasswd() {
-        return userPasswd;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
