@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".designer.fragment.DesignerHomeFragment">
 
 
@@ -85,25 +86,36 @@
                 android:layout_weight="6"
                 />
         </LinearLayout>
-    </LinearLayout>
 
-
-    <!-- 예약 내역 출력 -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/designer_page_home_reservation_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <!-- 예약 DB 연동 후 내역 출력 => 리스트로?
-            방문일자, 예약자, 핸드폰번호, 예약내역 -->
-
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cur_reser_rcv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/recyclerview_current_reservation_item"
+                />
 
         </LinearLayout>
 
-    </ScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/refresh_fab"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_baseline_refresh_24"
+        android:layout_margin="30dp"/>
+
+
+
+
+
 
 </FrameLayout>

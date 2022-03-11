@@ -9,3 +9,5 @@ class JoinActivity : AppCompatActivity() {
         setContentView(R.layout.activity_join_login)
     }
 }
+
+//연습
