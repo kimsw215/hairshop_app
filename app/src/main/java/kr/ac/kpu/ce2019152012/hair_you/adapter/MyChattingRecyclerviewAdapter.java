@@ -14,8 +14,6 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import kr.ac.kpu.ce2019152012.hair_you.R;
-import kr.ac.kpu.ce2019152012.hair_you.item.tmpChatItem;
-import kr.ac.kpu.ce2019152012.hair_you.item.tmpItem;
 
 public class MyChattingRecyclerviewAdapter  extends RecyclerView.Adapter<MyChattingRecyclerviewAdapter.ViewHolder> {
 

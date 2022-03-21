@@ -1,8 +1,8 @@
-package kr.ac.kpu.ce2019152012.hair_you.item;
+package kr.ac.kpu.ce2019152012.hair_you.adapter;
 
 public class tmpChatItem {
-    String name;
-    String content;
+    private String name;
+    private String content;
 
     public String getName() {
         return name;
@@ -17,11 +17,6 @@ public class tmpChatItem {
     }
 
     public void setContent(String content) {
-        this.content = content;
-    }
-
-    public tmpChatItem(String name, String content) {
-        this.name = name;
         this.content = content;
     }
 }

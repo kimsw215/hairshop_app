@@ -13,7 +13,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 import kr.ac.kpu.ce2019152012.hair_you.R;
-import kr.ac.kpu.ce2019152012.hair_you.item.tmpItem;
 
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
 
