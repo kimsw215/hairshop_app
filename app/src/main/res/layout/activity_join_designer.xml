@@ -65,7 +65,7 @@
                 android:textSize="20dp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/join_pw_Field1"
+                android:id="@+id/join_pw_Field"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
@@ -76,10 +76,35 @@
                 app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/join_pw_edit1"
+                    android:id="@+id/join_pw_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="이름"
+                android:textColor="@color/joincolor"
+                android:textSize="20dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/join_name_Field"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:hint="이름"
+                android:textColorHint="@color/joincolor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/join_name_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -112,22 +137,22 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:text="이름"
+                android:text="미용실 주소"
                 android:textColor="@color/joincolor"
                 android:textSize="20dp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/join_name_Field"
+                android:id="@+id/join_adrress_Field"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                android:hint="이름"
+                android:hint="미용실주소"
                 android:textColorHint="@color/joincolor">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/join_name_edit"
+                    android:id="@+id/join_adrress_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
