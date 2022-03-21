@@ -1,6 +1,15 @@
 package kr.ac.kpu.ce2019152012.hair_you.designer.fragment
 
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kr.ac.kpu.ce2019152012.hair_you.adapter.MyRecyclerAdapter
+import kr.ac.kpu.ce2019152012.hair_you.databinding.FragmentDesignerHomeBinding
 import retrofit2.Retrofit
 
 
