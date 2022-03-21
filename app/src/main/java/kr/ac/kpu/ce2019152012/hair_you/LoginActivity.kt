@@ -13,16 +13,17 @@ import com.kakao.sdk.user.UserApiClient
 import com.kakao.usermgmt.LoginButton
 
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityLoginBinding
+import kr.ac.kpu.ce2019152012.hair_you.designer.DesignerMainActivity
 import kr.ac.kpu.ce2019152012.hair_you.user.UserMainActivity
 import kr.ac.kpu.ce2019152012.hair_you.user.UserMainActivity.Companion.TAG
 import kr.ac.kpu.ce2019152012.hair_you.user.fragment.HomeFragment
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var bingding: ActivityLoginBinding
+    private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bingding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(bingding.root)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
             if (error != null) {
@@ -77,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         // 카카오톡이 설치되어 있으면 카카오톡으로 로그인, 아니면 카카오계정으로 로그인
-        bingding.kakaologin.setOnClickListener {
+        binding.kakaologin.setOnClickListener {
             if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
                 UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
                     if (error != null) {
@@ -99,6 +100,10 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        binding.joinText.setOnClickListener {
+            var intent = Intent(this, JoinSelectActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

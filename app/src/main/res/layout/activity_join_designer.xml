@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".JoinActivity">
+    tools:context=".JoinCustomerActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="계정 생성"
+        android:text="디자이너 계정 생성"
         android:textColor="#313333"
         android:textSize="30dp"
         android:textStyle="bold" />
@@ -183,6 +183,7 @@
                     android:layout_marginRight="20dp"/>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/join_in_btn"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:text="회원가입"

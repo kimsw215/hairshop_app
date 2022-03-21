@@ -28,11 +28,11 @@
             android:name=".user.UserMainActivity"
             android:exported="true" />
         <activity
-            android:name=".JoinActivity"
+            android:name=".JoinCustomerActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
