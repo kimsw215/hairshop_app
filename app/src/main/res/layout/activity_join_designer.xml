@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:text="이메일"
                 android:textColor="@color/joincolor"
                 android:textSize="20dp" />
@@ -45,7 +45,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:hint="아이디"
                 android:textColorHint="@color/joincolor">
 
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:text="비밀번호"
                 android:textColor="@color/joincolor"
                 android:textSize="20dp" />
@@ -82,45 +82,27 @@
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/join_pw_Field2"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:hint="비밀번호 확인"
-                android:textColorHint="@color/joincolor"
-                app:endIconMode="password_toggle">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/join_pw_edit2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:text="닉네임"
+                android:layout_marginTop="30dp"
+                android:text="휴대전화 번호"
                 android:textColor="@color/joincolor"
                 android:textSize="20dp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/join_nickname_Field"
+                android:id="@+id/join_phone_Field"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:hint="닉네임"
+                android:layout_marginTop="15dp"
+                android:hint="휴대전화번호"
                 android:textColorHint="@color/joincolor">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/join_nickname_edit"
+                    android:id="@+id/join_phone_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -129,10 +111,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:text="성별"
+                android:layout_marginTop="30dp"
+                android:text="이름"
                 android:textColor="@color/joincolor"
                 android:textSize="20dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/join_name_Field"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:hint="이름"
+                android:textColorHint="@color/joincolor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/join_name_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="성별"
+                android:textColor="@color/joincolor"
+                android:textSize="20dp"
+                android:layout_marginBottom="30dp"/>
 
 
 
@@ -145,18 +153,10 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:text="선택안함"
-                    android:textColor="@color/joincolor"
-                    android:background="@drawable/button_background_white_stroke" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
                     android:text="남자"
                     android:textColor="@color/joincolor"
                     android:background="@drawable/button_background_white_stroke"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginRight="30dp"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="100dp"
@@ -180,7 +180,7 @@
                     android:text="뒤로가기"
                     android:textColor="@color/joincolor"
                     android:background="@drawable/button_background_white_stroke"
-                    android:layout_marginRight="20dp"/>
+                    android:layout_marginRight="30dp"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/join_in_btn"
