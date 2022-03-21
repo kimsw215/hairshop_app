@@ -23,6 +23,7 @@ class DesignerMainActivity : AppCompatActivity(), BottomNavigationView.OnNavigat
         binding = ActivityDesignerMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        
 
         /*
         var fragmentone : Fragmentone = Fragmentone()
