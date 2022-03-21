@@ -29,7 +29,7 @@
                 android:textSize="30dp" />
 
             <ImageView
-                android:id="@+id/designer_home_iv_bell"
+                android:id="@+id/bell_iv"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="10dp"

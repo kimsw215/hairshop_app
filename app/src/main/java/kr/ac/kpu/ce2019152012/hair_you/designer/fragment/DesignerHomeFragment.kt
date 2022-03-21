@@ -1,15 +1,15 @@
 package kr.ac.kpu.ce2019152012.hair_you.designer.fragment
 
 import android.os.Bundle
+
+import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import kr.ac.kpu.ce2019152012.hair_you.adapter.MyRecyclerAdapter
 import kr.ac.kpu.ce2019152012.hair_you.databinding.FragmentDesignerHomeBinding
-import kr.ac.kpu.ce2019152012.hair_you.item.tmpItem
+import kr.ac.kpu.ce2019152012.hair_you.dto.UserDto
+
 import retrofit2.Retrofit
 
 class DesignerHomeFragment : Fragment() {
@@ -18,6 +18,8 @@ class DesignerHomeFragment : Fragment() {
     private lateinit var myReservationAdapter: MyRecyclerAdapter
     private lateinit var myReservationRecyclerView: RecyclerView
     private lateinit var tmpItems : ArrayList<tmpItem>
+
+    lateinit var retrofit: Retrofit
 
     lateinit var retrofit: Retrofit
 
@@ -60,13 +62,9 @@ class DesignerHomeFragment : Fragment() {
         myReservationRecyclerView.layoutManager = LinearLayoutManager( getActivity(), RecyclerView.HORIZONTAL,false )
                                                                     // 프래그먼트는 this 대신  getActivity().getApplicationContext() 사용
 
-        // 리사이클러뷰 예시
-        tmpItems=ArrayList<tmpItem>();
-        tmpItems.add(tmpItem("홍길동","22-03-01","펌","010-1234-1234"))
-        tmpItems.add(tmpItem("김수한","22-03-02","펌","010-7777-7777"))
-        tmpItems.add(tmpItem("이순신","22-03-03","펌","010-0000-1234"))
-        myReservationAdapter.setList(tmpItems)
-        myReservationAdapter.notifyDataSetChanged()
+        binding.refreshFab.setOnClickListener {
+            Log.d("event", "refreshFab clicked")
+        }
 
         return binding.root
     }
