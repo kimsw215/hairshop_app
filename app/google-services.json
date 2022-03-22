@@ -1,10 +1,7 @@
 {
   "project_info": {
     "project_number": "512221488956",
-<<<<<<< HEAD
-=======
     "firebase_url": "https://hair-you-default-rtdb.firebaseio.com",
->>>>>>> origin1/master
     "project_id": "hair-you",
     "storage_bucket": "hair-you.appspot.com"
   },
@@ -17,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "512221488956-t3mn6gpq2bks5fq75prm4jnish6gr00v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.ac.kpu.ce2019152012.hair_you",
+            "certificate_hash": "60c1eb23f0df7976a28c84f241cfcbefb3f50096"
+          }
+        },
         {
           "client_id": "512221488956-feahb9adqn33d78rg02pvv0ibn2asqoc.apps.googleusercontent.com",
           "client_type": 3

@@ -5,6 +5,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import kr.ac.kpu.ce2019152012.hair_you.R
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityDesignerMainBinding
 import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerChattingFragment
@@ -12,7 +13,7 @@ import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerHomeFragment
 import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerSettingFragment
 
 
-class DesignerMainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+class DesignerMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener {
     lateinit var selectedFragment : Fragment
 
     private lateinit var binding : ActivityDesignerMainBinding

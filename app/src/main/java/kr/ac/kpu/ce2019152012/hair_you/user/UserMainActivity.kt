@@ -5,18 +5,19 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import kr.ac.kpu.ce2019152012.hair_you.R
 import kr.ac.kpu.ce2019152012.hair_you.user.fragment.HomeFragment
 import kr.ac.kpu.ce2019152012.hair_you.user.fragment.MessageFragment
 import kr.ac.kpu.ce2019152012.hair_you.user.fragment.MypageFragment
 import kr.ac.kpu.ce2019152012.hair_you.user.fragment.StarFragment
 
-class UserMainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSelectedListener {
+class UserMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener {
     private lateinit var homeFragment : HomeFragment
     private lateinit var messageFragment: MessageFragment
     private lateinit var mypageFragment: MypageFragment
     private lateinit var starFragment: StarFragment
-    lateinit var bottom_nav : BottomNavigationView
+    lateinit var bottom_nav : NavigationBarView
 
     companion object{
         const val TAG: String = "로그"
@@ -31,7 +32,7 @@ class UserMainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationIt
         Log.d(TAG,"UserMainActivity - onCreate() called")
         bottom_nav=findViewById(R.id.bottom_nav)
 
-        bottom_nav.setOnNavigationItemSelectedListener(this)
+        bottom_nav.setOnItemSelectedListener(this)
 
         homeFragment= HomeFragment.newInstance()
         supportFragmentManager.beginTransaction().add(R.id.fragments_frame, homeFragment).commit()
