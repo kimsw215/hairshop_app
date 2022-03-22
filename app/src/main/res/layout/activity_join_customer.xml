@@ -130,8 +130,6 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/join_select_man"
-
-
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_marginRight="30dp"
@@ -140,10 +138,7 @@
                     android:textColor="@color/joincolor" />
 
                 <androidx.appcompat.widget.AppCompatButton
-
                     android:id="@+id/join_select_girl"
-                    android:id="@+id/join_female_btn"
-
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:background="@drawable/button_background_white_stroke"

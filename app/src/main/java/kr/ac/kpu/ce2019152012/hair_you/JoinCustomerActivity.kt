@@ -2,7 +2,7 @@ package kr.ac.kpu.ce2019152012.hair_you
 
 import android.content.Intent
 import android.os.Bundle
-
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -10,17 +10,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kr.ac.kpu.ce2019152012.hair_you.api.CustomerApi
 import kr.ac.kpu.ce2019152012.hair_you.api.RetrofitClient
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityJoinCustomerBinding
-
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import kr.ac.kpu.ce2019152012.hair_you.api.CustomerApi
-import kr.ac.kpu.ce2019152012.hair_you.api.RetrofitClient
-import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityJoinCustomerBinding
 import kr.ac.kpu.ce2019152012.hair_you.dto.CustomerDto
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
 import retrofit2.Retrofit
 
 class JoinCustomerActivity : AppCompatActivity() {
@@ -46,9 +39,9 @@ class JoinCustomerActivity : AppCompatActivity() {
 
 
 
-        //binding.joinFemaleBtn.setSelected(!(binding.joinMaleBtn.isSelected()))
+        //binding.joinSelectWonman.setSelected(!(binding.joinSelectMan.isSelected()))
 
-        var gender: String = if (binding.joinMaleBtn.isSelected()) "male" else "female"
+        var gender: String = if (binding.joinSelectMan.isSelected()) "male" else "female"
 
         // 회원가입 버튼 누르면 서버로 Call
         binding.joinInBtn.setOnClickListener {
@@ -62,7 +55,7 @@ class JoinCustomerActivity : AppCompatActivity() {
             val dto: CustomerDto = CustomerDto(
                 binding.joinNameEdit.toString(),
                 binding.joinIdEdit.toString(),
-                binding.joinPwEdit1.toString(),
+                binding.joinPwEdit.toString(),
                 binding.joinPhoneEdit.toString(),
                 gender
             )
