@@ -176,6 +176,7 @@
                 android:gravity="center">
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/join_male_btn"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:text="남자"
@@ -184,6 +185,7 @@
                     android:layout_marginRight="30dp"/>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/join_female_btn"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:text="여자"
