@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.common.model.ClientError
@@ -19,11 +21,19 @@ import kr.ac.kpu.ce2019152012.hair_you.user.UserMainActivity.Companion.TAG
 import kr.ac.kpu.ce2019152012.hair_you.user.fragment.HomeFragment
 
 class LoginActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        auth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
 
         UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
             if (error != null) {
@@ -76,6 +86,25 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             }
         }
+
+        // 이메일로 로그인
+        binding.loginBtn.setOnClickListener {
+            auth!!.signInWithEmailAndPassword(binding.editId.text.toString(),binding.editPwEdit.text.toString())
+                .addOnCompleteListener(this) {
+                    if(it.isSuccessful){
+                        Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
+                        val user = auth?.currentUser
+                        val intent = Intent(this, UserMainActivity::class.java)
+                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        //피니쉬함수 붙여야하나 ?
+                        //finish()
+                    } else {
+                        Toast.makeText(this, "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+        }
+
+
 
         // 카카오톡이 설치되어 있으면 카카오톡으로 로그인, 아니면 카카오계정으로 로그인
         binding.kakaologin.setOnClickListener {
