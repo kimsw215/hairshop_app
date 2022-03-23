@@ -1,10 +1,14 @@
 package kr.ac.kpu.ce2019152012.hair_you.dto;
 
 public class DesignerDto {
+    //json key 값과 dto
     private Long identification; // 기본키
     private String name;
     private String id;
     private String password;
+    private String phone;
+    private String gender;
+    private String shop_name; // FK 미용실 이름
 
     public Long getIdentification() {
         return identification;
@@ -39,11 +43,11 @@ public class DesignerDto {
     }
 
     public String getPhoneNum() {
-        return phoneNum;
+        return phone;
     }
 
     public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+        this.phone = phoneNum;
     }
 
     public String getGender() {
@@ -54,15 +58,22 @@ public class DesignerDto {
         this.gender = gender;
     }
 
-    public String getShop() {
-        return shop;
+    public String getShop_name() {
+        return shop_name;
     }
 
-    public void setShop(String shop) {
-        this.shop = shop;
+    public void setShop_name(String shop_name) {
+        this.shop_name = shop_name;
     }
 
-    private String phoneNum;
-    private String gender;
-    private String shop; // FK 미용실 이름
+
+
+    public DesignerDto(String name, String id, String password, String phoneNum, String gender, String shop) {
+        this.name = name;
+        this.id = id;
+        this.password = password;
+        this.phone = phoneNum;
+        this.gender = gender;
+        this.shop_name = shop;
+    }
 }

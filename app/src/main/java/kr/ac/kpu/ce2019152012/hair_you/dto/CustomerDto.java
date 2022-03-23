@@ -1,13 +1,11 @@
 package kr.ac.kpu.ce2019152012.hair_you.dto;
 
-import kotlin.BuilderInference;
-
 public class CustomerDto {
     private Long identification; // 기본키
     private String name;
     private String id;
     private String password;
-    private String phoneNum;
+    private String phone_num;
     private String gender;
 
 
@@ -15,7 +13,7 @@ public class CustomerDto {
         this.name = name;
         this.id = id;
         this.password = password;
-        this.phoneNum = phoneNum;
+        this.phone_num = phoneNum;
         this.gender = gender;
     }
 
@@ -52,11 +50,11 @@ public class CustomerDto {
     }
 
     public String getPhoneNum() {
-        return phoneNum;
+        return phone_num;
     }
 
     public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+        this.phone_num = phoneNum;
     }
 
     public String getGender() {
