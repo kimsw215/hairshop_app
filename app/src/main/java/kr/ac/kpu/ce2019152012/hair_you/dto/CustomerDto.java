@@ -5,7 +5,7 @@ public class CustomerDto {
     private String name;
     private String id;
     private String password;
-    private String phone_num;
+    private String phone;
     private String gender;
 
 
@@ -13,7 +13,7 @@ public class CustomerDto {
         this.name = name;
         this.id = id;
         this.password = password;
-        this.phone_num = phoneNum;
+        this.phone = phoneNum;
         this.gender = gender;
     }
 
@@ -50,11 +50,11 @@ public class CustomerDto {
     }
 
     public String getPhoneNum() {
-        return phone_num;
+        return phone;
     }
 
     public void setPhoneNum(String phoneNum) {
-        this.phone_num = phoneNum;
+        this.phone = phoneNum;
     }
 
     public String getGender() {

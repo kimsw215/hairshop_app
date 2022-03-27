@@ -19,9 +19,9 @@ public interface CustomerApi {
     @GET("/account/customers")
     Call<List<CustomerDto>> findAllCustomers();
 
-    @GET("/account/customer/{id}")
-    Call<CustomerDto> findCustomerById(@Path("id")String id);
+    @GET("/account/customer/id/{id}")
+    Call<CustomerDto> findCustomerById(@Path("id") String id);
 
-    @DELETE("/account/customer/{id}")
+    @DELETE("/account/customer/id/{id}")
     Call<CustomerDto> deleteCustomer(@Path("id") String id);
 }
