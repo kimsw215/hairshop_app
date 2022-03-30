@@ -2,14 +2,20 @@ package kr.ac.kpu.ce2019152012.hair_you
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.kakao.sdk.common.util.SdkLogLevel
 import kr.ac.kpu.ce2019152012.hair_you.api.CustomerApi
 import kr.ac.kpu.ce2019152012.hair_you.api.RetrofitClient
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityJoinCustomerBinding
+import kr.ac.kpu.ce2019152012.hair_you.dto.CustomerDto
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 
 class JoinCustomerActivity : AppCompatActivity() {
@@ -27,6 +33,7 @@ class JoinCustomerActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+        Log.d(TAG, "onCreate: "+binding.joinIdEdit.text.toString())
 
         // 회원가입 뒤로가기 버튼
         binding.joinBackBtn.setOnClickListener {
@@ -34,10 +41,32 @@ class JoinCustomerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         // 회원가입 버튼 누르면 서버로 Call
         binding.joinInBtn.setOnClickListener {
             val retrofit: Retrofit = RetrofitClient.getClient()
-            val customer: CustomerApi = retrofit.create(CustomerApi::class.java)
+            val customerService: CustomerApi = retrofit.create(CustomerApi::class.java)
+
+            val gender = if(binding.joinSelectMan.isSelected()) "male" else "female"
+
+            val dto=CustomerDto(
+                binding.joinNameEdit.text.toString(),
+                binding.joinIdEdit.text.toString(),
+                binding.joinPwEdit.text.toString(),
+                binding.joinPhoneEdit.text.toString(),
+                gender
+            )
+
+            customerService.saveCustomerInfo(dto).enqueue( object : Callback<CustomerDto> {
+                override fun onResponse(call: Call<CustomerDto>, response: Response<CustomerDto>) {
+                    Log.d("join", "onResponse: "+response.body()?.name +" 님 회원가입")
+                }
+
+                override fun onFailure(call: Call<CustomerDto>, t: Throwable) {
+                    Log.d("join", "onFailure: "+ t)
+                }
+            })
+
             //customer.saveCustomer().enqueue(Callback)
             // 이메일로 회원가입 회원가입 후 firebase로 데이터 전송
 /*            val userDto = UserDto()
