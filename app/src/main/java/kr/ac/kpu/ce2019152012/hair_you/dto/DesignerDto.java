@@ -68,6 +68,7 @@ public class DesignerDto {
 
 
 
+
     public DesignerDto(String name, String id, String password, String phoneNum, String gender, String shop) {
         this.name = name;
         this.id = id;
