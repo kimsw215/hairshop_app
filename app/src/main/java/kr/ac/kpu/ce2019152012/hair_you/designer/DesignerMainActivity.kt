@@ -15,31 +15,25 @@ import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerSettingFragment
 
 class DesignerMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener {
     lateinit var selectedFragment : Fragment
-
-    private lateinit var binding : ActivityDesignerMainBinding
+    private var _binding : ActivityDesignerMainBinding?= null
+    private val binding = _binding!!
+    /*
+    var fragmentone : Fragmentone = Fragmentone()
+    //프래그먼트에 data를 넣어주는 방법
+    // 번들을 이용하여 넣어줘야함
+    val bundle : Bundle = Bundle()
+    bundle.putString("hello","hello")
+    fragmentone.arguments = bundle
+    */
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDesignerMainBinding.inflate(layoutInflater)
+        _binding = ActivityDesignerMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        
-
-        /*
-        var fragmentone : Fragmentone = Fragmentone()
-        //프래그먼트에 data를 넣어주는 방법
-        // 번들을 이용하여 넣어줘야함
-        val bundle : Bundle = Bundle()
-        bundle.putString("hello","hello")
-        fragmentone.arguments = bundle
-        */
-
 
         binding.bottomNavigationView.setOnItemSelectedListener(this)
         supportFragmentManager.beginTransaction().add(R.id.linearLayout, DesignerHomeFragment()).commit()
-
-
 
     }
 

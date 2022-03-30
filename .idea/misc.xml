@@ -5,7 +5,7 @@
       <map>
         <entry key="..\:/GitDesktop/hairshop_app/app/src/main/res/layout/activity_designer_join.xml" value="0.1609375" />
         <entry key="..\:/GitDesktop/hairshop_app/app/src/main/res/layout/activity_designer_main.xml" value="0.2598958333333333" />
-        <entry key="..\:/GitDesktop/hairshop_app/app/src/main/res/layout/activity_join_customer.xml" value="0.1" />
+        <entry key="..\:/GitDesktop/hairshop_app/app/src/main/res/layout/activity_join_customer.xml" value="0.2" />
         <entry key="..\:/GitDesktop/hairshop_app/app/src/main/res/layout/activity_join_designer.xml" value="0.1621376811594203" />
         <entry key="..\:/GitDesktop/hairshop_app/app/src/main/res/layout/activity_join_login.xml" value="0.16032608695652173" />
         <entry key="..\:/GitDesktop/hairshop_app/app/src/main/res/layout/activity_join_select.xml" value="0.16032608695652173" />
@@ -22,13 +22,14 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/drawable/button_background.xml" value="0.22072072072072071" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/drawable/button_background_white.xml" value="0.1075" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/drawable/button_background_white_stroke.xml" value="0.1925" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/activity_designer_main.xml" value="0.21936936936936938" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/activity_designer_main.xml" value="0.1" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/activity_join_login.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/activity_join_select.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/activity_reservation_management.xml" value="0.21936936936936938" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/activity_splash.xml" value="0.21936936936936938" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/activity_user_main.xml" value="0.1" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/background_splash.xml" value="0.176" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/fragment_designer_chatting.xml" value="0.21936936936936938" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Hair_you/app/src/main/res/layout/fragment_designer_home.xml" value="0.21936936936936938" />
