@@ -1,12 +1,8 @@
 package kr.ac.kpu.ce2019152012.hair_you.service;
 
-import static kr.ac.kpu.ce2019152012.hair_you.service.GpsService.getAddress;
+import static kr.ac.kpu.ce2019152012.hair_you.service.GpsService.getCurrentAddress;
 import static kr.ac.kpu.ce2019152012.hair_you.service.GpsService.getLatitudeLongitude;
 
-import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -43,10 +39,11 @@ public class GpsTest {
 
         // spring으로 전송(DB에 저장)
         ShopDto dto = new ShopDto();
-        dto.setShopName("test");
+        dto.setShopName("test545");
         dto.setAddress(seoulCityHall);
         dto.setLatitude(latitude);
         dto.setLongitude(longitude);
+        dto.setInfo("미용실 설명");
 
         Call<ShopDto> convertedDto = shopApi.saveShop(dto);
         convertedDto.execute();
@@ -105,19 +102,22 @@ public class GpsTest {
         double longitude = 126.977969;   // 알고 있는 것
         String shopAddress ;             // 알아야 할 것
 
-        shopAddress = getAddress(latitude, longitude);
+        shopAddress = getCurrentAddress(latitude, longitude);
         System.out.println(shopAddress);
 
-        // spring에 전송
-        ShopDto dto = new ShopDto();
-        dto.setShopName("test");
-        dto.setAddress(shopAddress);
-        dto.setLongitude(longitude);
-        dto.setLatitude(latitude);
+        if(shopAddress != null) {
+            // spring에 전송
+            // dto로 body 맵핑
+            ShopDto dto = new ShopDto();
+            dto.setShopName("test");
+            dto.setAddress(shopAddress);
+            dto.setLongitude(longitude);
+            dto.setLatitude(latitude);
 
-        Call<ShopDto> convertedDto = shopApi.saveShop(dto) ;
-        convertedDto.execute();
-
+            // 서버로 전송하는 메서드 호출출
+           Call<ShopDto> convertedDto = shopApi.saveShop(dto);
+            convertedDto.execute();
+        }
         /*
 {
    "meta":{
