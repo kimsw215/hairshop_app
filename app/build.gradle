@@ -76,10 +76,16 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:23.0.2'
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
 
-    // 구글 지도 api
+    // 지도 api
     implementation 'com.google.maps:google-maps-services:2.0.0'
-    implementation files('library\\json-simple-1.1.1.jar')
-    implementation files('library\\libDaumMapAndroid.jar')
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation files('libs\\json-simple-1.1.1.jar')
+    implementation files('libs\\libDaumMapAndroid.jar')
+    implementation files('libs\\jniLibs.jar')
+    implementation files('src\\main\\jniLibs\\jniLibs.jar')
+    implementation files('libs\\jniLibs.jar')
+    implementation files('libs\\json-simple-1.1.1.jar')
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

@@ -12,7 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Service {
+class Services {
     var retrofit = RetrofitClient.getClient()
     var designerApi = retrofit.create(DesignerApi::class.java)
     var customerApi = retrofit.create(CustomerApi::class.java)

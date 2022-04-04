@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Hair_you_NoActionbar">
 
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/KAKAO_API_KEY"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/GOOGLE_MAPS_API_KEY" />
 
         <activity
             android:name=".JoinSelectActivity"
@@ -27,7 +30,13 @@
             android:exported="true" />
         <activity
             android:name=".designer.ReservationManagementActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".user.UserMainActivity"
             android:exported="true" />
@@ -40,11 +49,7 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity

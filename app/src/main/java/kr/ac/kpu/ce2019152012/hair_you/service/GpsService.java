@@ -1,5 +1,7 @@
 package kr.ac.kpu.ce2019152012.hair_you.service;
 
+import android.util.Log;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -102,24 +104,29 @@ public class GpsService {
         }
     }
 
-    public static String getAddress(double latitude, double longitude)throws Exception{
+    public static String getCurrentAddress(double latitude, double longitude)throws Exception{
         GpsService gps = new GpsService();
         String json = gps.reverseGeocoding(latitude, longitude);
         String shopAddress;
 
+        try {
 
-        JSONParser jsonParser = new JSONParser();
+            JSONParser jsonParser = new JSONParser();
 
-        // String 객체 json으로 parsing
-        JSONObject jsonMain = (JSONObject) jsonParser.parse(json);
+            // String 객체 json으로 parsing
+            JSONObject jsonMain = (JSONObject) jsonParser.parse(json);
 
-        JSONArray jsonDocumentsArr = (JSONArray) jsonMain.get("documents");
-        JSONObject documentsObject = (JSONObject) jsonDocumentsArr.get(0);
-        JSONObject jsonObject = (JSONObject) documentsObject.get("road_address");
+            JSONArray jsonDocumentsArr = (JSONArray) jsonMain.get("documents");
+            JSONObject documentsObject = (JSONObject) jsonDocumentsArr.get(0);
+            JSONObject jsonObject = (JSONObject) documentsObject.get("road_address");
 
-        shopAddress = jsonObject.get("address_name").toString();
+            shopAddress = jsonObject.get("address_name").toString();
 
-        return shopAddress;
+            return shopAddress;
+        } catch (Exception e){
+            Log.i("gps", "getCurrentAddress: "+ e.toString());
+            return null;
+        }
     }
 
     public static ArrayList<Double> getLatitudeLongitude(String address) throws Exception{

@@ -3,13 +3,13 @@ package kr.ac.kpu.ce2019152012.hair_you.dto;
 public class ReviewDto {
     private Long idx;
     private String content;
-    private String writedAt;
+    private String writtenAt;
     private String shopId; // FK 미용실
     private String cId; // FK 고객
 
-    public ReviewDto(String content, String writedAt, String shopId, String cId) {
+    public ReviewDto(String content, String writtenAt, String shopId, String cId) {
         this.content = content;
-        this.writedAt = writedAt;
+        this.writtenAt = writtenAt;
         this.shopId = shopId;
         this.cId = cId;
     }
@@ -30,12 +30,12 @@ public class ReviewDto {
         this.content = content;
     }
 
-    public String getWritedAt() {
-        return writedAt;
+    public String getWrittenAt() {
+        return writtenAt;
     }
 
-    public void setWritedAt(String writedAt) {
-        this.writedAt = writedAt;
+    public void setWrittenAt(String writtenAt) {
+        this.writtenAt = writtenAt;
     }
 
     public String getShopId() {
