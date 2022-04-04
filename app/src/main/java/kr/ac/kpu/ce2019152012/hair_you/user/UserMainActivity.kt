@@ -2,17 +2,14 @@ package kr.ac.kpu.ce2019152012.hair_you.user
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import kr.ac.kpu.ce2019152012.hair_you.R
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityUserMainBinding
 import kr.ac.kpu.ce2019152012.hair_you.user.fragment.HomeFragment
 import kr.ac.kpu.ce2019152012.hair_you.user.fragment.MessageFragment
 import kr.ac.kpu.ce2019152012.hair_you.user.fragment.MypageFragment
-import kr.ac.kpu.ce2019152012.hair_you.user.fragment.StarFragment
 
 class UserMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener {
     lateinit var selectedFragment : Fragment
@@ -34,10 +31,6 @@ class UserMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedLi
         when(item.itemId){
             R.id.menu_home->{
                 selectedFragment = HomeFragment()
-                show(selectedFragment)
-            }
-            R.id.menu_star->{
-                selectedFragment = StarFragment()
                 show(selectedFragment)
             }
             R.id.menu_mypage->{
