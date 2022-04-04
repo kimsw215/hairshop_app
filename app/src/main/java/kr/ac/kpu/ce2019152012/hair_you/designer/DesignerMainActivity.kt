@@ -36,10 +36,7 @@ class DesignerMainActivity : AppCompatActivity(), BottomNavigationView.OnNavigat
 
 
         binding.bottomNavigationView.setOnItemSelectedListener(this)
-        supportFragmentManager.beginTransaction().add(R.id.linearLayout, DesignerHomeFragment()).commit()
-
-
-
+       // supportFragmentManager.beginTransaction().add(R.id.linearLayout, DesignerHomeFragment()).commit()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

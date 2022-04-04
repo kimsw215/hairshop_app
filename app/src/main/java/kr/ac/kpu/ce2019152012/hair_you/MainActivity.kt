@@ -10,7 +10,6 @@ import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityMainBinding
 import kr.ac.kpu.ce2019152012.hair_you.designer.DesignerMainActivity
 import kr.ac.kpu.ce2019152012.hair_you.dto.Post
 import kr.ac.kpu.ce2019152012.hair_you.user.UserMainActivity
-import kr.ac.kpu.ce2019152012.hair_you.user.UserMainActivity.Companion.TAG
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,7 +17,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
     lateinit var retrofit:Retrofit
 

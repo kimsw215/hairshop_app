@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="kr.ac.kpu.ce2019152012.hair_you">
     <!-- 인터넷 사용 권한 설정 -->
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
+    </uses-permission>
     <application
         android:usesCleartextTraffic="true"
 
@@ -13,7 +15,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Hair_you_NoActionbar">
+        android:theme="@style/Theme.Hair_you_NoActionbar"
+        tools:targetApi="m">
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="7d73ad51a6a4a5808b30eb48286e214c"/>
 
         <activity
             android:name=".JoinSelectActivity"
@@ -26,18 +33,21 @@
             android:exported="true" />
         <activity
             android:name=".user.UserMainActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".JoinCustomerActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"

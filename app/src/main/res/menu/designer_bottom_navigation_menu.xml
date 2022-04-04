@@ -2,12 +2,12 @@
 
     <item
         android:id="@+id/designer_page_home"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/home"
         android:title="홈"/>
 
     <item
         android:id="@+id/designer_page_chatting"
-        android:icon="@drawable/ic_baseline_message_24"
+        android:icon="@drawable/chat"
         android:title="대화방"/>
 
     <item
