@@ -36,8 +36,6 @@ class MainActivity : AppCompatActivity() {
             */
 
 
-
-
             // 서버 연동 220309
             // 에뮬레이터에서 확인 할 때 10.0.2.2 || 디바이스에서 확인 할 때 실제 내부 ip주소
             val retrofit = Retrofit.Builder()

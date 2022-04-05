@@ -118,8 +118,25 @@
             android:text="1:1 대화방"
             android:textSize="14dp" />
 
-
     </LinearLayout>
 
 
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        />
+
+/>
+
+
+    <Button
+        android:id="@+id/cur_location_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현재 위치 가져오기"
+        />
 </LinearLayout>

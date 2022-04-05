@@ -5,8 +5,17 @@ public class CustomerDto {
     private String name;
     private String id;
     private String password;
-    private String phoneNum;
+    private String phone;
     private String gender;
+
+
+    public CustomerDto( String name, String id, String password, String phoneNum, String gender) {
+        this.name = name;
+        this.id = id;
+        this.password = password;
+        this.phone = phoneNum;
+        this.gender = gender;
+    }
 
     public Long getIdentification() {
         return identification;
@@ -41,11 +50,11 @@ public class CustomerDto {
     }
 
     public String getPhoneNum() {
-        return phoneNum;
+        return phone;
     }
 
     public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+        this.phone = phoneNum;
     }
 
     public String getGender() {

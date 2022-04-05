@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/designer_page_setting"
-        android:icon="@drawable/ic_baseline_settings_24"
+        android:icon="@drawable/mypage"
         android:title="설정"/>
 
     <!-- android:icon="@drawable/~"-->

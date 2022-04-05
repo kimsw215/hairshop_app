@@ -15,11 +15,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        //kakao map
-        ndk {
-            abiFilters 'arm64-v8a', 'armeabi', 'armeabi-v7a'
-        }
-
     }
 
     buildFeatures{
@@ -40,6 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    testOptions{
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -48,16 +47,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
 
-    implementation 'de.hdodenhof:circleimageview:3.1.0' // CircleImageView
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
-
-
-    // Retrofit2
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    // CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -82,12 +75,23 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
     implementation 'com.google.firebase:firebase-messaging:23.0.2'
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
-    implementation 'com.google.firebase:firebase-database:19.2.1'
-    //noinspection GradleCompatible
-   // implementation 'com.android.support:recyclerview-v7:26.1.0'
 
-//    testImplementation 'junit:junit:'
+    // 지도 api
+    implementation 'com.google.maps:google-maps-services:2.0.0'
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation files('libs\\json-simple-1.1.1.jar')
+    implementation files('libs\\libDaumMapAndroid.jar')
+    implementation files('libs\\jniLibs.jar')
+    implementation files('src\\main\\jniLibs\\jniLibs.jar')
+    implementation files('libs\\jniLibs.jar')
+    implementation files('libs\\json-simple-1.1.1.jar')
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    testImplementation 'org.mockito:mockito-core:4.0.0'
+    testImplementation 'org.mockito:mockito-inline:2.21.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //implementation 'com.google.gms:google-services:4.3.10'
 }

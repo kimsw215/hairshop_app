@@ -20,9 +20,6 @@ class DesignerHomeFragment : Fragment() {
     private lateinit var myReservationRecyclerView: RecyclerView
 
 
-
-    lateinit var retrofit: Retrofit
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
