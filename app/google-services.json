@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "512221488956",
+    "firebase_url": "https://hair-you-default-rtdb.firebaseio.com",
+    "project_id": "hair-you",
+    "storage_bucket": "hair-you.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512221488956:android:24b2460223d5cf45da2039",
+        "android_client_info": {
+          "package_name": "kr.ac.kpu.ce2019152012.hair_you"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512221488956-t3mn6gpq2bks5fq75prm4jnish6gr00v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.ac.kpu.ce2019152012.hair_you",
+            "certificate_hash": "60c1eb23f0df7976a28c84f241cfcbefb3f50096"
+          }
+        },
+        {
+          "client_id": "512221488956-feahb9adqn33d78rg02pvv0ibn2asqoc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHBTkpFT-40Gobvv_GfAQ1lxlpePx43Ic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512221488956-feahb9adqn33d78rg02pvv0ibn2asqoc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
