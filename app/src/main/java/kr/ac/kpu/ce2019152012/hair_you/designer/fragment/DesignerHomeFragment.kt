@@ -15,14 +15,14 @@ import retrofit2.Retrofit
 
 class DesignerHomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentDesignerHomeBinding
+    private var _binding: FragmentDesignerHomeBinding? = null
+    private val binding get() = _binding!!
     private lateinit var myReservationAdapter: MyRecyclerAdapter
     private lateinit var myReservationRecyclerView: RecyclerView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
     }
 
@@ -31,8 +31,7 @@ class DesignerHomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         //myReservationAdapter=view.findViewById(R.layout.recyclerview_current_reservation_item)
-
-        binding = FragmentDesignerHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentDesignerHomeBinding.inflate(inflater, container, false)
 
         myReservationRecyclerView=binding.curReserRcv
         myReservationAdapter=
@@ -50,6 +49,8 @@ class DesignerHomeFragment : Fragment() {
 
         return binding.root
     }
-
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

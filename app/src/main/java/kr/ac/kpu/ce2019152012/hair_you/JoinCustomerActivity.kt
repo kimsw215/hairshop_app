@@ -37,8 +37,7 @@ class JoinCustomerActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
-        Log.d(TAG, "onCreate: " + binding.joinIdEdit.text.toString())
-        setup()
+        setup2()
 
         // 회원가입 뒤로가기 버튼
         binding.joinBackBtn.setOnClickListener {
@@ -84,7 +83,7 @@ class JoinCustomerActivity : AppCompatActivity() {
                 "phone" to binding.joinPhoneEdit.text.toString().trim()
             )
 
-            db.collection("Customer").document("Information")
+            db.collection("Customer").document(binding.joinIdEdit.text.toString().trim())
                 .set(userInformation, SetOptions.merge())
                 .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
@@ -129,9 +128,18 @@ class JoinCustomerActivity : AppCompatActivity() {
         private const val TAG = "EmailPassword"
     }
 
+
+
     fun setup() {
         db = Firebase.firestore
 
+        val settings = firestoreSettings {
+            isPersistenceEnabled = true
+        }
+        db.firestoreSettings = settings
+    }
+    fun setup2(){
+        db = FirebaseFirestore.getInstance()
         val settings = firestoreSettings {
             isPersistenceEnabled = true
         }

@@ -57,7 +57,6 @@ class DesignerMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelect
     }
 
     private fun show(fragment: Fragment) {
-
         val fragmentManager = supportFragmentManager
 
         fragmentManager

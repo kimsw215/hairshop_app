@@ -12,29 +12,22 @@ import kr.ac.kpu.ce2019152012.hair_you.databinding.FragmentDesignerChattingBindi
 
 class DesignerChattingFragment : Fragment() {
 
-    private lateinit var binding: FragmentDesignerChattingBinding
+    private var _binding: FragmentDesignerChattingBinding? = null
+    private val binding get() = _binding!!
     private lateinit var mAdapter : MyChattingRecyclerviewAdapter
     private lateinit var mChatRecyclerView: RecyclerView
 
- 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentDesignerChattingBinding.bind(view)
         // Activity의 Oncreate에서 했던 작업을 여기에서 한다
 
-    }
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentDesignerChattingBinding.inflate(inflater, container, false);
+        _binding = FragmentDesignerChattingBinding.inflate(inflater, container, false)
 
         mChatRecyclerView=binding.chattingRcv
         mAdapter= MyChattingRecyclerviewAdapter()
@@ -45,5 +38,9 @@ class DesignerChattingFragment : Fragment() {
 
 
         return binding.root
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

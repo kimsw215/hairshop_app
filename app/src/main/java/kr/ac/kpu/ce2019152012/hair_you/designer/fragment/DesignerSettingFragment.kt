@@ -9,22 +9,21 @@ import kr.ac.kpu.ce2019152012.hair_you.R
 import kr.ac.kpu.ce2019152012.hair_you.databinding.FragmentDesignerSettingBinding
 
 class DesignerSettingFragment : Fragment() {
-    private lateinit var binding : FragmentDesignerSettingBinding
+    private var _binding : FragmentDesignerSettingBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        //binding = FragmentDesignerSettingBinding.bind(view)
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val binding = FragmentDesignerSettingBinding.inflate(inflater, container, false)
-
+        _binding = FragmentDesignerSettingBinding.inflate(inflater,container,false)
         return binding.root
     }
-
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

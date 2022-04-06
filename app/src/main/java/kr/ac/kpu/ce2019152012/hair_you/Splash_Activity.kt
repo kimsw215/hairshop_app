@@ -11,9 +11,8 @@ class Splash_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-
         Handler().postDelayed({
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,LoginActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
             finish()
@@ -21,7 +20,7 @@ class Splash_Activity : AppCompatActivity() {
 
     }
     companion object{
-        private const val Duration : Long = 3000
+        private const val Duration : Long = 2000
     }
 
     override fun onBackPressed() {
