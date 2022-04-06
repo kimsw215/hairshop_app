@@ -26,7 +26,7 @@ import kr.ac.kpu.ce2019152012.hair_you.user.UserMainActivity
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
-    private lateinit var db : FirebaseFirestore
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,9 +45,9 @@ class LoginActivity : AppCompatActivity() {
         db.collection("Customer")
             .get()
             .addOnSuccessListener { result ->
-                for(docoment in result) {
+                for (docoment in result) {
                     CustomerList.add(docoment.id.trim())
-                    Log.d("list",CustomerList.toString().trim())
+                    Log.d("list", CustomerList.toString().trim())
                 }
             }.addOnFailureListener { exception ->
                 Log.d(TAG, "Error getting documents: ", exception)
@@ -56,9 +56,9 @@ class LoginActivity : AppCompatActivity() {
         db.collection("Designer")
             .get()
             .addOnSuccessListener { result ->
-                for(docoment in result) {
+                for (docoment in result) {
                     DesignerList.add(docoment.id.trim())
-                    Log.d("list",DesignerList.toString().trim())
+                    Log.d("list", DesignerList.toString().trim())
                 }
             }.addOnFailureListener { exception ->
                 Log.d(TAG, "Error getting documents: ", exception)
@@ -127,21 +127,17 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
                         val user = auth?.currentUser
                         updateUI(user)
-
-                        if(binding.editId.text.toString().trim() in CustomerList){
+                        if (binding.editId.text.toString().trim() in CustomerList) {
                             val intent = Intent(this, UserMainActivity::class.java)
                             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                        }
-                        else if (binding.editId.text.toString().trim() in DesignerList){
+                            finish()
+                        } else if (binding.editId.text.toString().trim() in DesignerList) {
                             val intent = Intent(this, DesignerMainActivity::class.java)
-                            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                        }
-                        else {
+                            startActivity(intent)
+                            finish()
+                        } else {
                             Log.w(TAG, "Error getting documents ")
                         }
-
-                        /*val intent = Intent(this, UserMainActivity::class.java)
-                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))*/
                     } else {
                         Toast.makeText(this, "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show()
                         updateUI(null)
@@ -182,25 +178,14 @@ class LoginActivity : AppCompatActivity() {
 /*    private fun signIn(email: String, password: String) {
         // [START sign_in_with_email]
         auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithEmail:success")
-                    Toast.makeText(
-                        baseContext, "로그인 성공.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+            .addOnCompleteListener(this) {
+                if (it.isSuccessful) {
                     val user = auth.currentUser
                     updateUI(user)
-                    val intent = Intent(this, UserMainActivity::class.java)
+                    val intent = Intent(this, DesignerMainActivity::class.java)
                     startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                 } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(
-                        baseContext, "로그인 실패.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this, "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show()
                     updateUI(null)
                 }
             }
@@ -242,7 +227,8 @@ class LoginActivity : AppCompatActivity() {
         }
         db.firestoreSettings = settings
     }
-    fun setup2(){
+
+    fun setup2() {
         db = FirebaseFirestore.getInstance()
         val settings = firestoreSettings {
             isPersistenceEnabled = true

@@ -16,11 +16,9 @@ class UserMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedLi
     private var _binding : ActivityUserMainBinding? =null
     private val binding get() = _binding!!
 
-    //화면이 메모리에 올라갔을 때
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityUserMainBinding.inflate(layoutInflater)
-        // 레이아웃과 연결
         setContentView(binding.root)
 
         binding.bottomNav.setOnItemSelectedListener(this)

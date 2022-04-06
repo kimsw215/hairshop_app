@@ -18,7 +18,9 @@ class MypageFragment : Fragment(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
-
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+    }
     // 뷰가 생성되었을 때
     // 프래그먼트와 레이아웃을 연결시켜주는 부분
     override fun onCreateView(

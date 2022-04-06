@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import kr.ac.kpu.ce2019152012.hair_you.MainActivity
 import kr.ac.kpu.ce2019152012.hair_you.R
 import kr.ac.kpu.ce2019152012.hair_you.databinding.FragmentHomeBinding
 
@@ -15,8 +16,13 @@ class HomeFragment : Fragment(){
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Fragment를 생성하면서 필요한 변수나 리소스를 초기화하는 부분이다.
     }
 
     // 뷰가 생성되었을 때

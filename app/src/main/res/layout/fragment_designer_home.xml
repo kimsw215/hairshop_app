@@ -1,122 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".designer.fragment.DesignerHomeFragment">
 
-
-    <LinearLayout
-        android:id="@+id/designer_page_home_header"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <!-- 페이지 헤더 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/white"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:text="{미용실 이름}"
-                android:textSize="30dp" />
-
-            <ImageView
-                android:id="@+id/bell_iv"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="10dp"
-                android:layout_gravity="center"
-                android:src="@drawable/icon_bell_not_activated" />
-        </LinearLayout>
-
-        <!-- 예약 내역 제목 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:orientation="horizontal"
-            android:background="@color/browser_actions_bg_grey"
-            android:gravity="center"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="방문일자"
-                android:textSize="14dp"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:padding="5dp"
-                android:layout_weight="2"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="예약자"
-                android:textSize="14dp"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:padding="5dp"
-                android:layout_weight="1"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="휴대폰"
-                android:textSize="14dp"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:padding="5dp"
-                android:layout_weight="1"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="예약내역"
-                android:textSize="14dp"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:padding="5dp"
-                android:layout_weight="6"
-                />
-        </LinearLayout>
+        android:text="디자이너 홈"
+        android:textSize="30dp"/>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/cur_reser_rcv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/recyclerview_current_reservation_item"
-                />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/refresh_fab"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_gravity="end|bottom"
-        android:src="@drawable/ic_baseline_refresh_24"
-        android:layout_margin="30dp"/>
-
-
-
-
-
-
-
-</FrameLayout>
+</LinearLayout>

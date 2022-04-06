@@ -86,6 +86,8 @@ dependencies {
     implementation files('libs\\jniLibs.jar')
     implementation files('libs\\json-simple-1.1.1.jar')
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
