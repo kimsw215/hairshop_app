@@ -8,6 +8,17 @@ public class ShopDto {
     private double latitude;
     private double longitude;
 
+    public String getAllInfo() {
+        return "ShopDto{" +
+                "id=" + id +
+                ", info='" + info + '\'' +
+                ", shopName='" + shopName + '\'' +
+                ", address='" + address + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                '}';
+    }
+
     public ShopDto() {
     }
 

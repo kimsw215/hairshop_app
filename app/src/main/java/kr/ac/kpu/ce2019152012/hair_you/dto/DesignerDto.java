@@ -8,7 +8,7 @@ public class DesignerDto {
     private String password;
     private String phone;
     private String gender;
-    private String shopId; // FK 미용실
+    private ShopDto shopId; // FK 미용실
 
     public Long getIdentification() {
         return identification;
@@ -58,18 +58,18 @@ public class DesignerDto {
         this.gender = gender;
     }
 
-    public String getShop_name() {
+    public ShopDto getShop_name() {
         return shopId;
     }
 
-    public void setShop_name(String shop_name) {
+    public void setShop_name(ShopDto shop_name) {
         this.shopId = shop_name;
     }
 
 
 
 
-    public DesignerDto(String name, String id, String password, String phoneNum, String gender, String shop) {
+    public DesignerDto(String name, String id, String password, String phoneNum, String gender, ShopDto shop) {
         this.name = name;
         this.id = id;
         this.password = password;

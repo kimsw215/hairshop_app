@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="56dp"
-        android:background="@drawable/button_kakao_background"
+        android:background="@drawable/kakao_login_symbol"
         android:text="카카오 로그아웃"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
