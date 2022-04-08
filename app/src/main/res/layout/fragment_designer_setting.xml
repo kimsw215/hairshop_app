@@ -1,57 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".designer.fragment.DesignerSettingFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:background="@color/white"
-        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="디자이너 마이페이지"
+        android:textSize="30dp"/>
 
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:src="@drawable/icon_back"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="설정"
-            android:textSize="30dp"
-            android:layout_weight="1"
-            android:textColor="@color/black"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"/>
-
-        <Button
-            android:id="@+id/designer_page_setting_btn_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="로그아웃"
-            android:textSize="14dp"
-            android:layout_gravity="center"
-            android:layout_marginRight="10dp"
-            />
-
-        <!-- <ImageView
-            android:id="@+id/header_home"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_home"
-            android:layout_marginRight="6dp"
-            android:layout_gravity="right"/> -->
-    </LinearLayout>
-
-
-
-</FrameLayout>
+</LinearLayout>

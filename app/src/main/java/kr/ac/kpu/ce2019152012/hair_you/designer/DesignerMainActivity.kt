@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import kr.ac.kpu.ce2019152012.hair_you.R
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityDesignerMainBinding
@@ -26,19 +25,17 @@ class DesignerMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelect
     fragmentone.arguments = bundle
     */
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityDesignerMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.bottomNavigationView.setOnItemSelectedListener(this)
-        supportFragmentManager.beginTransaction().add(R.id.linearLayout, DesignerHomeFragment()).commit()
+        supportFragmentManager.beginTransaction().add(R.id.DlinearLayout, DesignerHomeFragment()).commit()
 
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-
         when(item.itemId) {
             R.id.designer_page_home -> {
                 selectedFragment = DesignerHomeFragment()
@@ -53,16 +50,13 @@ class DesignerMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelect
                 show(selectedFragment)
             }
         }
-        return false
+        return true
     }
-
     private fun show(fragment: Fragment) {
-
         val fragmentManager = supportFragmentManager
-
         fragmentManager
             .beginTransaction()
-            .replace(R.id.linearLayout, fragment)
+            .replace(R.id.DlinearLayout, fragment)
             .commit()
     }
 }

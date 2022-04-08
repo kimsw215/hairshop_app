@@ -162,6 +162,31 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
+                android:text="장소"
+                android:textColor="@color/joincolor"
+                android:textSize="20dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/join_place_Field"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:hint="미용실 장소"
+                android:textColorHint="@color/joincolor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/join_shop_place_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
                 android:text="성별"
                 android:textColor="@color/joincolor"
                 android:textSize="20dp"
@@ -202,6 +227,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/join_back_btn"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:text="뒤로가기"

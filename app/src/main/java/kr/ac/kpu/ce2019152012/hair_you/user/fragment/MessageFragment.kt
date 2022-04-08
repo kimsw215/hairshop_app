@@ -8,12 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kr.ac.kpu.ce2019152012.hair_you.R
+import kr.ac.kpu.ce2019152012.hair_you.databinding.FragmentMessageBinding
 
 class MessageFragment : Fragment(){
-
     //프래그먼트가 메모리에 올라갔을때
+    private var _binding: FragmentMessageBinding? = null
+    private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
     }
 
     // 뷰가 생성되었을 때
@@ -24,8 +29,13 @@ class MessageFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_message, container, false)
-
+        _binding = FragmentMessageBinding.inflate(inflater, container, false)
+        val view = binding.root
         return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
