@@ -43,7 +43,6 @@ class Services {
                 call: Call<ReservationDto>,
                 response: Response<ReservationDto>
             ) {
-                Log.d("reservation", "onResponse: " + response.body()?.getcId())
             }
 
             override fun onFailure(call: Call<ReservationDto>, t: Throwable) {
