@@ -1,19 +1,38 @@
 package kr.ac.kpu.ce2019152012.hair_you.dto;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import java.time.LocalDateTime;
+
 public class ReservationDto {
     private Long idx;
     private String curCondition;
     private String detail;
     private String reservedAt;
-    private String cId; // FK 고객
-    private String shopId; // FK 미용실
+    private String createdAt;
+    private CustomerDto cId; // FK 고객
+    private ShopDto shopId; // FK 미용실
 
-    public ReservationDto(String curCondition, String detail, String reservedAt, String cId, String shopId) {
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public ReservationDto(String curCondition, String detail, String reservedAt, CustomerDto cId, ShopDto shopId) {
         this.curCondition = curCondition;
         this.detail = detail;
         this.reservedAt = reservedAt;
+        this.createdAt = LocalDateTime.now().toString();
         this.cId = cId;
         this.shopId = shopId;
+    }
+
+
+    public String getInfo() {
+        return "ReservationDto{" +
+                "idx=" + idx +
+                ", curCondition='" + curCondition + '\'' +
+                ", detail='" + detail + '\'' +
+                ", reservedAt='" + reservedAt + '\'' +
+                '}';
     }
 
     public Long getIdx() {
@@ -48,19 +67,27 @@ public class ReservationDto {
         this.reservedAt = reservedAt;
     }
 
-    public String getcId() {
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public CustomerDto getcId() {
         return cId;
     }
 
-    public void setcId(String cId) {
+    public void setcId(CustomerDto cId) {
         this.cId = cId;
     }
 
-    public String getShopId() {
+    public ShopDto getShopId() {
         return shopId;
     }
 
-    public void setShopId(String shopId) {
+    public void setShopId(ShopDto shopId) {
         this.shopId = shopId;
     }
 }

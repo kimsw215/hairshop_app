@@ -11,10 +11,10 @@ import retrofit2.http.Path;
 
 public interface ShopApi {
 
-    @GET("/shops")
+    @GET("/shop")
     Call<List<ShopDto>> findAllShops();
 
-    @GET("/shop/{shop_name}")
+    @GET("/shop/name/{shop_name}")
     Call<ShopDto> findShopByName(@Path("shop_name") String shopName);
 
     @POST("/shop")
