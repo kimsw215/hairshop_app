@@ -6,6 +6,10 @@
         android:title="홈"
         android:icon="@drawable/home"/>
     <item
+        android:id="@+id/menu_star"
+        android:title="즐겨찾기"
+        android:icon="@drawable/favorit"/>
+    <item
         android:id="@+id/menu_message"
         android:title="대화방"
         android:icon="@drawable/chat"/>

@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="kr.ac.kpu.ce2019152012.hair_you">
     <!-- 인터넷 사용 권한 설정 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
+    </uses-permission>
+    <application
+        android:usesCleartextTraffic="true"
+
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
+
         android:name=".GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +22,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hair_you_NoActionbar"
+
+        tools:targetApi="m">
+
+
         android:usesCleartextTraffic="true">
         <activity
             android:name=".user.fragment.TestActivity"
@@ -22,27 +34,41 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/KAKAO_API_KEY" />
+
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/GOOGLE_MAPS_API_KEY" />
+            android:name="com.kakao.sdk.AppKey"
+            android:value="7d73ad51a6a4a5808b30eb48286e214c"/>
 
         <activity
             android:name=".JoinSelectActivity"
             android:exported="true" />
         <activity
             android:name=".designer.DesignerMainActivity"
+
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+
             android:exported="true" />
         <activity
             android:name=".designer.ReservationManagementActivity"
             android:exported="true"></activity>
+
+        <activity
+            android:name=".designer.ReservationManagementActivity"
+            android:exported="true" />
         <activity
             android:name=".user.UserMainActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".JoinCustomerActivity"
-            android:exported="true" />
-        <activity
-            android:name=".JoinDesignerActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
