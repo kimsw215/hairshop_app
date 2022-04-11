@@ -68,10 +68,10 @@ dependencies {
     implementation group: 'com.kakao.sdk', name: 'kakaolink', version: '1.30.5'
 
     // 파이어 베이스 커스텀 로그인, 데이터 베이스
-    implementation 'com.google.firebase:firebase-analytics-ktx:20.1.1'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.2'
+    implementation 'com.google.firebase:firebase-analytics-ktx:20.1.2'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.3'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.4'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.0.2'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.1.0'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
     implementation 'com.google.firebase:firebase-messaging:23.0.2'
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
@@ -79,15 +79,10 @@ dependencies {
     // 지도 api
     implementation 'com.google.maps:google-maps-services:2.0.0'
     implementation 'com.google.android.gms:play-services-location:19.0.1'
-    implementation files('libs\\json-simple-1.1.1.jar')
-    implementation files('libs\\libDaumMapAndroid.jar')
-    implementation files('libs\\jniLibs.jar')
-    implementation files('src\\main\\jniLibs\\jniLibs.jar')
-    implementation files('libs\\jniLibs.jar')
-    implementation files('libs\\json-simple-1.1.1.jar')
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation files('libs/json-simple-1.1.1.jar')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
