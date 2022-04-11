@@ -14,8 +14,8 @@ import kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerSettingFragment
 
 class DesignerMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener {
     lateinit var selectedFragment : Fragment
-    private lateinit var binding : ActivityDesignerMainBinding
-
+    private var _binding : ActivityDesignerMainBinding?= null
+    private val binding = _binding!!
     /*
     var fragmentone : Fragmentone = Fragmentone()
     //프래그먼트에 data를 넣어주는 방법
@@ -27,7 +27,7 @@ class DesignerMainActivity : AppCompatActivity(), NavigationBarView.OnItemSelect
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDesignerMainBinding.inflate(layoutInflater)
+        _binding = ActivityDesignerMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.bottomNavigationView.setOnItemSelectedListener(this)

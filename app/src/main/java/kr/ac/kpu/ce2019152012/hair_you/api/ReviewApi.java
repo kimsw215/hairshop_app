@@ -13,7 +13,7 @@ public interface ReviewApi {
     @GET("/reviews")
     Call<List<ReviewDto>> findAllReviews();
 
-    @GET("/account/id/{c_id}/reviews")
+    @GET("/account/{c_id}/reviews")
     Call<List<ReviewDto>> findAllReviewsByCId(@Path("c_id") String c_id);
 
     @POST("/review")

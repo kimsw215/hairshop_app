@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import kr.ac.kpu.ce2019152012.hair_you.R;
 import kr.ac.kpu.ce2019152012.hair_you.api.CustomerApi;
 import kr.ac.kpu.ce2019152012.hair_you.api.ShopApi;
 import kr.ac.kpu.ce2019152012.hair_you.dto.ShopDto;
@@ -16,9 +15,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class GpsTest {
-    String ip = String.valueOf(R.string.house_internal_ip);
     Retrofit rf = new Retrofit.Builder()
-            .baseUrl("http://"+ip+":8080")
+            .baseUrl("http://172.30.1.3:8080")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 

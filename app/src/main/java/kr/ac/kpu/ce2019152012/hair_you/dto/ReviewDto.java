@@ -1,22 +1,15 @@
 package kr.ac.kpu.ce2019152012.hair_you.dto;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
-import java.time.LocalDateTime;
-
 public class ReviewDto {
     private Long idx;
     private String content;
-    private LocalDateTime writtenAt;
-    private ShopDto shopId; // FK 미용실
-    private CustomerDto cId; // FK 고객
+    private String writtenAt;
+    private String shopId; // FK 미용실
+    private String cId; // FK 고객
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public ReviewDto(String content, String writtenAt, ShopDto shopId, CustomerDto cId) {
+    public ReviewDto(String content, String writtenAt, String shopId, String cId) {
         this.content = content;
-        this.writtenAt = LocalDateTime.now();
+        this.writtenAt = writtenAt;
         this.shopId = shopId;
         this.cId = cId;
     }
@@ -37,27 +30,27 @@ public class ReviewDto {
         this.content = content;
     }
 
-    public LocalDateTime getWrittenAt() {
+    public String getWrittenAt() {
         return writtenAt;
     }
 
-    public void setWrittenAt(LocalDateTime writtenAt) {
+    public void setWrittenAt(String writtenAt) {
         this.writtenAt = writtenAt;
     }
 
-    public ShopDto getShopId() {
+    public String getShopId() {
         return shopId;
     }
 
-    public void setShopId(ShopDto shopId) {
+    public void setShopId(String shopId) {
         this.shopId = shopId;
     }
 
-    public CustomerDto getcId() {
+    public String getcId() {
         return cId;
     }
 
-    public void setcId(CustomerDto cId) {
+    public void setcId(String cId) {
         this.cId = cId;
     }
 }

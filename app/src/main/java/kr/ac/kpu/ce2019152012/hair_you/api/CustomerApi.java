@@ -19,9 +19,6 @@ public interface CustomerApi {
     @GET("/account/customers")
     Call<List<CustomerDto>> findAllCustomers();
 
-    @GET("/account/customer/{identification}")
-    Call<CustomerDto> findById(@Path("identification") Long identification);
-
     @GET("/account/customer/id/{id}")
     Call<CustomerDto> findCustomerById(@Path("id") String id);
 

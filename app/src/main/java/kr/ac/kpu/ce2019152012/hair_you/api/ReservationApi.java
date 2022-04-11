@@ -13,12 +13,11 @@ public interface ReservationApi {
     @GET("/reservations")
     Call<List<ReservationDto>> findAllReservations();
 
-    @GET("/account/id/{id}/reservations")
+    @GET("/account/{id}/reservations")
     Call<List<ReservationDto>> findByCustomerId(@Path("id") String id);
 
-    @GET("/shop/name/{name}/reservations")
+    @GET("/shop/{name}/reservations")
     Call<List<ReservationDto>> findByShopName(@Path("name") String shopname);
-
 
     @POST("/reservation")
     Call<ReservationDto> saveReservation(@Body ReservationDto dto);

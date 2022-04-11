@@ -15,17 +15,12 @@ public interface DesignerApi {
     @POST("/account/designer")
     Call<DesignerDto> saveDesignerInfo(@Body DesignerDto dto);
 
-    @GET("/account/designers")
+    @GET("/account/desingers")
     Call<List<DesignerDto>> findAllDesigners();
 
-    @GET("/account/designer/identification")
-    Call<DesignerDto> findById(@Path("identification") Long identification);
+    @GET("/account/designer/{id}")
+    Call<DesignerDto> findDesignerById(@Path("id") String identification);
 
-    @GET("/account/designer/id/{id}")
-    Call<DesignerDto> findDesignerById(@Path("id") String id);
-
-
-    @DELETE("/account/designer/id/{id}")
+    @DELETE("/account/designer/{id}")
     Call<DesignerDto> deleteDesigner(@Path("id") String id);
-
 }
