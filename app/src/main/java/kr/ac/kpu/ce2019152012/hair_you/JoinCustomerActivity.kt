@@ -27,8 +27,11 @@ import retrofit2.Retrofit
 class JoinCustomerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityJoinCustomerBinding
+
     private lateinit var auth: FirebaseAuth
     private lateinit var db : FirebaseFirestore
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

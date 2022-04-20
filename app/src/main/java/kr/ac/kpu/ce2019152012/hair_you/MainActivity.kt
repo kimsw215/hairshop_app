@@ -9,7 +9,7 @@ import kr.ac.kpu.ce2019152012.hair_you.api.RetrofitAPI
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityMainBinding
 import kr.ac.kpu.ce2019152012.hair_you.designer.DesignerMainActivity
 import kr.ac.kpu.ce2019152012.hair_you.dto.Post
-import kr.ac.kpu.ce2019152012.hair_you.user.UserMainActivity
+import kr.ac.kpu.ce2019152012.hair_you.user.CustomerContainerActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
 
         //유저 메인 페이지 가는 코드
         binding.gotoUserPage.setOnClickListener{
-            var intent = Intent(this, UserMainActivity::class.java)
+            var intent = Intent(this, CustomerContainerActivity::class.java)
             /*
             intent.apply{
                 this.putExtra("name", value)

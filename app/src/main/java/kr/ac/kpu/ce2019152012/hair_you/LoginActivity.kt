@@ -21,13 +21,14 @@ import com.kakao.sdk.user.UserApiClient
 
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityLoginBinding
 import kr.ac.kpu.ce2019152012.hair_you.designer.DesignerMainActivity
-import kr.ac.kpu.ce2019152012.hair_you.user.UserMainActivity
+import kr.ac.kpu.ce2019152012.hair_you.user.CustomerContainerActivity
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityLoginBinding
+
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
 
+    private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -70,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
             } else if (tokenInfo != null) {
                 Toast.makeText(this, "토근 정보 보기 성공", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this, UserMainActivity::class.java)
+                val intent = Intent(this, CustomerContainerActivity::class.java)
                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                 finish()
             }
@@ -110,7 +111,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             } else if (token != null) {
                 Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, UserMainActivity::class.java)
+                val intent = Intent(this, CustomerContainerActivity::class.java)
                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                 finish()
             }
@@ -128,7 +129,7 @@ class LoginActivity : AppCompatActivity() {
                         val user = auth?.currentUser
                         updateUI(user)
                         if (binding.editId.text.toString().trim() in CustomerList) {
-                            val intent = Intent(this, UserMainActivity::class.java)
+                            val intent = Intent(this, CustomerContainerActivity::class.java)
                             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                             finish()
                         } else if (binding.editId.text.toString().trim() in DesignerList) {

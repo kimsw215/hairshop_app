@@ -2,6 +2,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -47,7 +48,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.google.code.gson:gson:2.8.9'
-    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
 
     // CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
@@ -76,6 +77,14 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:23.0.2'
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
 
+    // Kotlin FragmentContainerView
+    def nav_version = "2.4.1"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    // Feature module Support
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+
     // 지도 api
     implementation 'com.google.maps:google-maps-services:2.0.0'
     implementation 'com.google.android.gms:play-services-location:19.0.1'
@@ -83,6 +92,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
     implementation files('libs/json-simple-1.1.1.jar')
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
