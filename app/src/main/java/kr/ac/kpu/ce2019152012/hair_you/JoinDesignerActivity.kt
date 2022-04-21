@@ -1,6 +1,5 @@
 package kr.ac.kpu.ce2019152012.hair_you
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +17,7 @@ import kr.ac.kpu.ce2019152012.hair_you.api.DesignerApi
 import kr.ac.kpu.ce2019152012.hair_you.api.RetrofitClient
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityJoinDesignerBinding
 import kr.ac.kpu.ce2019152012.hair_you.dto.DesignerDto
+import kr.ac.kpu.ce2019152012.hair_you.dto.ShopDto
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -56,7 +56,9 @@ class JoinDesignerActivity : AppCompatActivity() {
                 binding.joinPwEdit.text.toString(),
                 binding.joinPhoneEdit.text.toString(),
                 gender,
-                binding.joinShopNameEdit.text.toString()
+                ShopDto("info",
+                    binding.joinShopNameEdit.text.toString().trim(),
+                    binding.joinShopPlaceEdit.text.toString().trim())
             )
 
             // POST "/account/designer" dto(body) 요청(call) - > callback으로 DesignerDto 형식으로 반환

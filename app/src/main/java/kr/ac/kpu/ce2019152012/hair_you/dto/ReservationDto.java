@@ -1,14 +1,16 @@
 package kr.ac.kpu.ce2019152012.hair_you.dto;
 
+import java.time.LocalDateTime;
+
 public class ReservationDto {
     private Long idx;
     private String curCondition;
     private String detail;
-    private String reservedAt;
-    private String cId; // FK 고객
-    private String shopId; // FK 미용실
+    private LocalDateTime reservedAt;
+    private CustomerDto cId; // FK 고객
+    private ShopDto  shopId; // FK 미용실
 
-    public ReservationDto(String curCondition, String detail, String reservedAt, String cId, String shopId) {
+    public ReservationDto(String curCondition, String detail, LocalDateTime reservedAt, CustomerDto cId, ShopDto shopId) {
         this.curCondition = curCondition;
         this.detail = detail;
         this.reservedAt = reservedAt;
@@ -40,27 +42,27 @@ public class ReservationDto {
         this.detail = detail;
     }
 
-    public String getReservedAt() {
+    public LocalDateTime getReservedAt() {
         return reservedAt;
     }
 
-    public void setReservedAt(String reservedAt) {
+    public void setReservedAt(LocalDateTime reservedAt) {
         this.reservedAt = reservedAt;
     }
 
-    public String getcId() {
+    public CustomerDto getcId() {
         return cId;
     }
 
-    public void setcId(String cId) {
+    public void setcId(CustomerDto cId) {
         this.cId = cId;
     }
 
-    public String getShopId() {
+    public ShopDto getShopId() {
         return shopId;
     }
 
-    public void setShopId(String shopId) {
+    public void setShopId(ShopDto shopId) {
         this.shopId = shopId;
     }
 }

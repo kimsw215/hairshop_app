@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".reservation.Reser3">
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\@@@님"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="169dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="예약이 완료되었습니다"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="249dp" />
+
+
+
+    <TextView
+        android:id="@+id/show_reser_info_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\@월 @일 @시"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="209dp" />
+
+
+
+    <ImageView
+        android:id="@+id/selected_design_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_baseline_person_24"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="420dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택한 디자인"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="355dp" />
+
+    <Button
+        android:id="@+id/back_to_home_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="홈으로"
+        tools:layout_editor_absoluteX="286dp"
+        tools:layout_editor_absoluteY="645dp" />
+
+
+</LinearLayout>

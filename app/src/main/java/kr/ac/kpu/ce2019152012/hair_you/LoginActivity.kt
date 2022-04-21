@@ -1,10 +1,10 @@
 package kr.ac.kpu.ce2019152012.hair_you
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -18,17 +18,24 @@ import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
-
+import kr.ac.kpu.ce2019152012.hair_you.api.CustomerApi
+import kr.ac.kpu.ce2019152012.hair_you.api.DesignerApi
+import kr.ac.kpu.ce2019152012.hair_you.api.RetrofitClient
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityLoginBinding
 import kr.ac.kpu.ce2019152012.hair_you.designer.DesignerMainActivity
 import kr.ac.kpu.ce2019152012.hair_you.user.CustomerContainerActivity
+import kr.ac.kpu.ce2019152012.hair_you.user.fragment.HomeFragment
+import retrofit2.Retrofit
 
 class LoginActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
+    private val rf : Retrofit = RetrofitClient.getClient()
 
-    private lateinit var binding: ActivityLoginBinding
+    private val homeFragment = HomeFragment()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -119,6 +126,12 @@ class LoginActivity : AppCompatActivity() {
 
         // 이메일로 로그인
         binding.loginBtn.setOnClickListener {
+
+            val bundle = Bundle()
+            bundle.putString("userId", binding.editId.getText().toString())
+            homeFragment.setArguments(bundle)
+
+
             auth.signInWithEmailAndPassword(
                 binding.editId.text.toString().trim(),
                 binding.editPwEdit.text.toString().trim()
@@ -130,10 +143,12 @@ class LoginActivity : AppCompatActivity() {
                         updateUI(user)
                         if (binding.editId.text.toString().trim() in CustomerList) {
                             val intent = Intent(this, CustomerContainerActivity::class.java)
+                            intent.putExtra("userId", binding.editId.text.toString())
                             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                             finish()
                         } else if (binding.editId.text.toString().trim() in DesignerList) {
                             val intent = Intent(this, DesignerMainActivity::class.java)
+                            intent.putExtra("userId", binding.editId.text.toString())
                             startActivity(intent)
                             finish()
                         } else {

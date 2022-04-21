@@ -4,10 +4,9 @@
     package="kr.ac.kpu.ce2019152012.hair_you">
     <!-- 인터넷 사용 권한 설정 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
-    </uses-permission>
-    <application
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <application
         android:name=".GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,8 +14,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hair_you_NoActionbar"
-        tools:targetApi="m"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity
+            android:name=".reservation.Reser3"
+            android:exported="false" />
+        <activity
+            android:name=".reservation.Reser2"
+            android:exported="false" />
+        <activity
+            android:name=".reservation.Reser1"
+            android:exported="false" />
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
@@ -27,28 +35,12 @@
             android:exported="true" />
         <activity
             android:name=".designer.DesignerMainActivity"
-            android:exported="true"/>
-        <activity
-            android:name=".designer.ReservationManagementActivity"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".user.CustomerContainerActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".JoinDesignerActivity"
-            android:exported="true"/>
-        <activity
-            android:name=".JoinCustomerActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".designer.ReservationManagementActivity"
+            android:exported="true" />
+        <activity
+            android:name=".user.CustomerContainerActivity"
             android:exported="true">
 
         </activity>
@@ -56,11 +48,27 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity
+            android:name=".JoinDesignerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".JoinCustomerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".Splash_Activity"
             android:exported="true"
-            android:theme="@style/Theme.Hair_you_NoActionbar">
-        </activity>
-        <!-- Redirect URI 설정하기 -->
+            android:theme="@style/Theme.Hair_you_NoActionbar" /> <!-- Redirect URI 설정하기 -->
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">

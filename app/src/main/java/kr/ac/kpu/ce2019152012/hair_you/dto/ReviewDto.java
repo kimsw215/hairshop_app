@@ -1,13 +1,15 @@
 package kr.ac.kpu.ce2019152012.hair_you.dto;
 
+import java.time.LocalDate;
+
 public class ReviewDto {
     private Long idx;
     private String content;
-    private String writtenAt;
-    private String shopId; // FK 미용실
-    private String cId; // FK 고객
+    private LocalDate writtenAt;
+    private ShopDto shopId; // FK 미용실
+    private CustomerDto cId; // FK 고객
 
-    public ReviewDto(String content, String writtenAt, String shopId, String cId) {
+    public ReviewDto(String content, LocalDate writtenAt, ShopDto shopId, CustomerDto cId) {
         this.content = content;
         this.writtenAt = writtenAt;
         this.shopId = shopId;
@@ -30,27 +32,27 @@ public class ReviewDto {
         this.content = content;
     }
 
-    public String getWrittenAt() {
+    public LocalDate getWrittenAt() {
         return writtenAt;
     }
 
-    public void setWrittenAt(String writtenAt) {
+    public void setWrittenAt(LocalDate writtenAt) {
         this.writtenAt = writtenAt;
     }
 
-    public String getShopId() {
+    public ShopDto getShopId() {
         return shopId;
     }
 
-    public void setShopId(String shopId) {
+    public void setShopId(ShopDto shopId) {
         this.shopId = shopId;
     }
 
-    public String getcId() {
+    public CustomerDto getcId() {
         return cId;
     }
 
-    public void setcId(String cId) {
+    public void setcId(CustomerDto cId) {
         this.cId = cId;
     }
 }
