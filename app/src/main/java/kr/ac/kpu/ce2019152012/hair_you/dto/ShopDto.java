@@ -59,12 +59,10 @@ public class ShopDto {
         this.longitude = longitude;
     }
 
-    public ShopDto(String info, String shopName, String address, double latitude, double longitude) {
+    public ShopDto(String info, String shopName, String address) {
         this.info = info;
         this.shopName = shopName;
         this.address = address;
-        this.latitude = latitude;
-        this.longitude = longitude;
     }
 
 
