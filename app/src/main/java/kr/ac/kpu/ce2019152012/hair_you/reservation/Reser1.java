@@ -5,15 +5,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.DatePicker;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 
-import kr.ac.kpu.ce2019152012.hair_you.api.RetrofitClient;
 import kr.ac.kpu.ce2019152012.hair_you.api.ShopApi;
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityReser1Binding;
 import kr.ac.kpu.ce2019152012.hair_you.dto.ShopDto;
@@ -70,24 +67,23 @@ public class Reser1 extends AppCompatActivity {
 
 
         binding.toSelectDesignBtn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(v.getContext(), Reser2.class);
 
                 int dateY = binding.selectDateDp.getYear();
-                int dateM = binding.selectDateDp.getMonth();
+                int dateM = binding.selectDateDp.getMonth()+1;
                 int dateD = binding.selectDateDp.getDayOfMonth();
                 int timeH = binding.selectTimeTp.getHour();
 
-                // 처음 실행했을 때 날짜/시간이 저장돼서 extra로 넘어감
-                // 해결해야 함.. LocalDateTime으로 parse해야 됨됨
-               Log.i("reser", "onCreate: " + dateY + dateM + dateD);
-                String dateTime = String.valueOf(dateY) + "-"+String.valueOf(dateM + 1)+"-" + String.valueOf(dateD)
-                        + " " + String.valueOf(timeH);
+                LocalDateTime ldt = LocalDateTime.of(dateY,dateM,dateD,timeH,0);
+
+                Log.i("reser", "onClick: "+ ldt);
 
                 in.putExtra("shopName", shopName);
                 in.putExtra("userId", userId);
-                in.putExtra("dateTime", dateTime);
+                in.putExtra("localdatetime",ldt);
                 startActivity(in);
             }
         });

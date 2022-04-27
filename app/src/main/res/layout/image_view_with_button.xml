@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/hair_design_iv"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
