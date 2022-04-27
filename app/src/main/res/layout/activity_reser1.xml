@@ -26,6 +26,7 @@
         android:layout_width="282dp"
         android:layout_height="264dp"
         android:datePickerMode="spinner"
+        android:spinnersShown="false"
         tools:layout_editor_absoluteX="64dp"
         tools:layout_editor_absoluteY="114dp" />
 

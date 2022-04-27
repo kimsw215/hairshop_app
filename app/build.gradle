@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId "kr.ac.kpu.ce2019152012.hair_you"
-        minSdk 21
-        targetSdk 30
+        minSdk 24
+        targetSdk 29
         versionCode 1
         versionName "1.0"
 
@@ -53,6 +53,12 @@ dependencies {
     // CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    // ar
+    implementation 'com.google.ar:core:1.30.0'
+    implementation "com.gorisse.thomas.sceneform:sceneform:1.20.5"
+
+
+
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -76,6 +82,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
     implementation 'com.google.firebase:firebase-messaging:23.0.2'
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Kotlin FragmentContainerView
     def nav_version = "2.4.1"

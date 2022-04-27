@@ -50,7 +50,6 @@ class DatabaseTest{
         var result = converted.execute()
         println(result.body()?.identification)
 
-
         assertEquals(result.body()?.password, "testpw")
 
 
