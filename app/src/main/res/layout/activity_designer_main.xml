@@ -7,14 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".designer.DesignerMainActivity">
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/DlinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottomNavigationView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
-    </FrameLayout>
+        android:layout_centerHorizontal="true"
+
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/d_nav_graph" >
+    </androidx.fragment.app.FragmentContainerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

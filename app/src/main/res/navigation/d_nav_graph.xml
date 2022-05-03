@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/d_nav_graph"
+    app:startDestination="@id/designerHomeFragment">
+    <fragment
+        android:id="@+id/designerHomeFragment"
+        android:name="kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerHomeFragment"
+        android:label="fragment_designer_home"
+        tools:layout="@layout/fragment_designer_home" />
+    <fragment
+        android:id="@+id/designerChattingFragment"
+        android:name="kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerChattingFragment"
+        android:label="fragment_designer_chatting"
+        tools:layout="@layout/fragment_designer_chatting" />
+    <fragment
+        android:id="@+id/designerSettingFragment"
+        android:name="kr.ac.kpu.ce2019152012.hair_you.designer.fragment.DesignerSettingFragment"
+        android:label="fragment_designer_setting"
+        tools:layout="@layout/fragment_designer_setting" />
+</navigation>

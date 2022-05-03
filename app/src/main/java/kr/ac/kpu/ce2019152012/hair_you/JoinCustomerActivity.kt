@@ -8,13 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.firestoreSettings
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.kakao.sdk.common.util.SdkLogLevel
 import kr.ac.kpu.ce2019152012.hair_you.api.CustomerApi
 import kr.ac.kpu.ce2019152012.hair_you.api.RetrofitClient
 import kr.ac.kpu.ce2019152012.hair_you.databinding.ActivityJoinCustomerBinding
@@ -31,6 +29,10 @@ class JoinCustomerActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var db : FirebaseFirestore
 
+    private var user = Firebase.auth.currentUser
+    private var uid = user?.uid.toString()
+
+    private val itemsCollectionRef = db.collection("Customer")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,10 +85,11 @@ class JoinCustomerActivity : AppCompatActivity() {
                 "id" to binding.joinIdEdit.text.toString().trim(),
                 "passwd" to binding.joinPwEdit.text.toString().trim(),
                 "name" to binding.joinNameEdit.text.toString().trim(),
-                "phone" to binding.joinPhoneEdit.text.toString().trim()
+                "phone" to binding.joinPhoneEdit.text.toString().trim(),
+                "uid" to uid
             )
 
-            db.collection("Customer").document(binding.joinIdEdit.text.toString().trim())
+            db.collection("Customer").document(uid)
                 .set(userInformation, SetOptions.merge())
                 .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
@@ -131,16 +134,6 @@ class JoinCustomerActivity : AppCompatActivity() {
         private const val TAG = "EmailPassword"
     }
 
-
-
-    fun setup() {
-        db = Firebase.firestore
-
-        val settings = firestoreSettings {
-            isPersistenceEnabled = true
-        }
-        db.firestoreSettings = settings
-    }
     fun setup2(){
         db = FirebaseFirestore.getInstance()
         val settings = firestoreSettings {
