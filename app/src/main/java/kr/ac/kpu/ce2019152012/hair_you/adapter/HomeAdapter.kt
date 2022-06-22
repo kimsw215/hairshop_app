@@ -36,15 +36,13 @@ class HomeAdapter:
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        private val Photo = itemView.findViewById<ImageView>(R.id.shop_img)
         private val ShopName = itemView.findViewById<TextView>(R.id.shop_name)
         private val ShopPlace = itemView.findViewById<TextView>(R.id.shop_place)
 
         fun bind(item: HomeShopDataVo){
 
             ShopName.text = item.shopname
-            ShopPlace.text = item.shopplace
-            Glide.with(itemView).load(item.shopimg).into(Photo)
+            ShopPlace.text = item.shop_road_name
 
             val pos = adapterPosition
             if ( pos != RecyclerView.NO_POSITION){
