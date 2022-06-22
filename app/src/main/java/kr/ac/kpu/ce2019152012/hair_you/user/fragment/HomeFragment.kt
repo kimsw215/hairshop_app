@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import kr.ac.kpu.ce2019152012.hair_you.databinding.FragmentHomeBinding
@@ -18,19 +19,6 @@ class HomeFragment : Fragment(){
     private val binding get() = _binding!!
 
     private lateinit var navController : NavController
-
-    //프래그먼트가 메모리에 올라갔을때
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //Fragment를 생성하면서 필요한 변수나 리소스를 초기화하는 부분이다.
-
-
-
-    }
 
     // 뷰가 생성되었을 때
     // 프래그먼트와 레이아웃을 연결시켜주는 부분
@@ -50,19 +38,18 @@ class HomeFragment : Fragment(){
 
         var userId : String? = requireActivity().getIntent().getStringExtra("userId")
 
-        binding.makeReservationBtn.setOnClickListener {
+        /*binding.makeReservationBtn.setOnClickListener {
             val intent= Intent(activity, Reser1::class.java)
             intent.putExtra("shopName","test") // 임시 미용실 이름 : test | 미용실 리스트에서 선택한 값
             intent.putExtra("userId", userId)
             startActivity(intent)
-        }
+        }*/
 
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
     }
 

@@ -15,22 +15,24 @@ class MypageFragment : Fragment(){
     //프래그먼트가 메모리에 올라갔을때
     private var _binding: FragmentMypageBinding? = null
     private val binding get() = _binding!!
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
-    // 뷰가 생성되었을 때
-    // 프래그먼트와 레이아웃을 연결시켜주는 부분
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentMypageBinding.inflate(inflater,container,false)
-        val view = inflater.inflate(R.layout.fragment_mypage, container, false)
+        val view = binding.root
+
+        binding.customerMypageName.text = "이름: ${"name"}"
+        binding.customerMypagePhone.text = "전화번호: ${"phone"}"
+
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 
     override fun onDestroyView() {
