@@ -7,6 +7,7 @@ public class ReservationDto {
     private String curCondition;
     private String detail;
     private LocalDateTime reservedAt;
+    private LocalDateTime createdAt;
     private CustomerDto cId; // FK 고객
     private ShopDto  shopId; // FK 미용실
 
